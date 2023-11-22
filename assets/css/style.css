@@ -74,7 +74,7 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
   padding: 20px 0;
-  background-color:#b7491d;
+  background-color: #b7491d;
 }
 
 #header .logo {
@@ -110,6 +110,7 @@ h6 {
 .navbar {
   padding: 0;
   color:#f7f2df;
+  background-color: #b7491d;
 }
 
 .navbar ul {
