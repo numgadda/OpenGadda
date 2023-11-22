@@ -796,7 +796,7 @@ section {
 }
 
 .portfolio .portfolio-item .portfolio-info p {
-  color: #f7f2df;
+  color: ;
   font-size: 14px;
   margin-bottom: 0;
 }
@@ -1141,6 +1141,8 @@ section {
 
 .team .member .member-info {
   padding: 25px 15px;
+  background-color: #b7491d;
+  color: #f7f2df;
 }
 
 .team .member .member-info h4 {
