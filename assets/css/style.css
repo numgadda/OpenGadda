@@ -11,17 +11,17 @@
 --------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
-  color: #444444;
+  color: #2b240c;
   background-color: #f7f2df;
 }
 
 a {
-  color: #e43c5c;
+  color: #b7491d;
   text-decoration: none;
 }
 
 a:hover {
-  color: #ea6981;
+  color: #cd8061;
   text-decoration: none;
 }
 
@@ -74,6 +74,7 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
   padding: 20px 0;
+  background-color: #b7491d;
 }
 
 #header .logo {
