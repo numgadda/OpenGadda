@@ -84,7 +84,6 @@ h6 {
   line-height: 1;
   font-weight: 600;
   letter-spacing: 1px;
-  text-transform: uppercase;
 }
 
 #header .logo a {
@@ -372,6 +371,7 @@ h6 {
 
 #hero:before {
   content: "";
+  background: rgba(0, 0, 0, 0.269);
   position: absolute;
   bottom: 0;
   top: 0;
@@ -395,7 +395,7 @@ h6 {
 
 #hero h3 {
   background: rgba(255, 255, 255, 0.1);
-  color: black;
+  color: #f7f2df;
   font-size: 26px;
   padding: 10px 30px;
   margin-bottom: 30px;
@@ -408,7 +408,7 @@ h6 {
   font-weight: 700;
   line-height: 56px;
   text-transform: uppercase;
-  color: black;
+  color: #f7f2df;
 }
 
 #hero h2 {
@@ -428,7 +428,7 @@ h6 {
   border-radius: 50px;
   transition: 0.5s;
   border: 2px solid #f7f2df;
-  color: black;
+  color: #f7f2df;
 }
 
 #hero .btn-get-started:hover {
@@ -552,7 +552,7 @@ section {
   margin-bottom: 0;
 }
 
-.about .content .btn-learn-more {
+.btn-learn-more {
   font-family: "Nunito", sans-serif;
   font-weight: 600;
   font-size: 14px;
@@ -566,14 +566,15 @@ section {
   animation-delay: 0.8s;
   margin-top: 6px;
   border: 2px solid #b7491d;
-}
 
-.about .content .btn-learn-more:hover {
+}
+.btn-learn-more:hover {
   background: #b7491d;
   color: #f7f2df;
   text-decoration: none;
-}
 
+
+}
 
 
 
@@ -913,3 +914,4 @@ section {
     max-width: 100%;
   }
 }
+
