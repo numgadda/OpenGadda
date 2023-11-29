@@ -369,6 +369,16 @@ h6 {
   position: relative;
 }
 
+
+#hero2 {
+  width: 100%;
+  height: 100vh;
+  background: url("../img/GaddaCopia.jpg") top center;
+  background-size: cover;
+  position: relative;
+}
+
+
 #hero:before {
   content: "";
   background: rgba(0, 0, 0, 0.269);
