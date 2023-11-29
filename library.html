@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Library Catalog</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+  <link href="assets/css/cssLibrary.css" rel="stylesheet">
+
+  
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+
+  <link href="assets/css/style.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.pagination.js/0.1.1/list.pagination.js" integrity="sha512-DgwxWpg8sBTL8c/Q3AB2agigdCpBRVWb3WRNlgaxHWqCNxzv/80XVYXCHSftOrigEF/h8wv+lPjngSAq3fHlGw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>   
+    
+
+  <!-- =======================================================
+  * Template Name: Tempo
+  * Updated: Sep 18 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/tempo-free-onepage-bootstrap-theme/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center justify-content-between">
+     <h1 class="logo"><a href="index.html">NdG</a></h1>
+        
+      <!-- Uncomment below if you prefer to use an image logo -->
+      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li class="dropdown"><a href="#"><span>Archive</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="#">Database</a></li>
+              <li><a href="#">Data Visualization</a></li>
+            </ul>
+          </li>
+          <li class="dropdown"><a href="#"><span>Library</span> <i class="bi bi-chevron-down"></i></a>
+            <ul>
+              <li><a href="library.html">Database</a></li>
+              <li><a href="#">Data Visualization</a></li>
+            </ul>
+          </li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero2" style="height: 50vh;">
+    
+  </section><!-- End Hero -->
+
+  <main id="main" style="margin: 50px;">
+
+    
+    <h1>Library Catalog</h1>
+
+    <div id="catalog">
+    
+
+      <p>Explore the four conservation fund that collect Gadda's library:</p>
+    
+      <ul class="filter-by" id="filter-by">
+      <button class="btn" id="show-all">Show All </button>
+
+<li><button class="btn filter-button" data-filter="BTB" title="Biblioteca Teatrale del Burcardo">BTB</button>
+</li>
+<li>
+  <button class="btn filter-button" data-filter="BAL" title="Biblioteca dell’archivio liberati">BAL</button>
+
+</li>
+<li>
+  <button class="btn filter-button" data-filter="BAC" title="Biblioteca dell’archivio contemporaneo “alessandro Bonsanti” del Gabinetto G.P. Vieusseux di Firenze">BAC</button>
+</li>
+
+<li>
+  <button class="btn filter-button" data-filter="BTM" title="Biblioteca Trivulziana Milano">BTM</button>
+
+</li>
+</ul>
+
+   
+
+<p>Visualize only the Text annotated by Gadda:</p>
+
+<ul class="filter-annotation">
+<button class="btn" id="show-annotations">Show annotated texts</button>
+<!--<button class="btn" id="revert-show-annotations">Show All</button>-->
+</ul>
+
+
+
+
+
+        <ul class="sort-by">
+
+
+        <button class="btn sort" data-sort="Title">Sort by title</button>
+        <button class="btn sort" data-sort="Authors">Sort by author</button>
+        <button class="btn sort" data-sort="Years">Sort by year</button>
+      </ul>
+       
+
+      <div class="search-container">
+        <div>
+          <h4 class="search-heading">Keyword search</h4>
+          <input class="search" placeholder="Search" />
+        </div>
+        <div>
+          <h4 class="search-heading">Filter by book genre:</h4>
+          <select id="category-filter">
+            <option value="all">All Genres</option>
+            <option value="AL">Anglo-american literature</option>
+            <option value="CL">Classical literature</option>
+            <option value="D">Vocabularies and dictionaries</option>
+            <option value="FL">French literature</option>
+            <option value="G">Geography</option>
+            <option value="GB">Gadda's bibliography</option>
+            <option value="GL">German literature</option>
+            <option value="GR">Foreign languages grammars</option>
+            <option value="H">History</option>
+            <option value="HA">History of art</option>
+            <option value="IL">Italian literature</option>
+            <option value="M">Military</option>
+            <option value="P">Philosophy</option>
+            <option value="RL">Russian literature</option>
+            <option value="SL">Spanish literature</option>
+            <option value="T">Technology and science</option>
+            <option value="TH">Theatre</option>
+            <option value="V">Varia</option>
+          </select>
+         
+         
+          <a href="javascript:void(0);" class="info-link">
+            <span class="search-info">
+              <b>Legend</b>
+              <ul>
+                <li><b>AL</b> Anglo-american literature</li>
+                <li><b>CL</b> Classical literature</li>
+                <li><b>D</b> Vocabularies and dictionaries</li>
+                <li><b>FL</b> French literature</li>
+                <li><b>G</b> Geography</li>
+                <li><b>GB</b> Gadda's bibliography
+                <br>  (contains the books written by Gadda)</li>
+                <li><b>GL</b> German literature</li>
+                <li><b>GR</b> Languages, grammars and literatures
+                <br>(contains italian and foreign languages grammars, educational texts and essays on philology and/or literature)</li>
+                <li><b>H</b> History</li>
+                <li><b>HA</b> History of art</li>
+                <li><b>IL</b> Italian literature</li>
+                <li><b>M</b> Military</li>
+                <li><b>P</b> Philosophy</li>
+                <li><b>RL</b> Russian literature</li>
+                <li><b>SL</b> Spanish- American literature</li>
+                <li><b>T</b> Technology and science</li>
+                <li><b>TH</b> Theatre</li>
+                <li><b>V</b> Varia</li>
+              </ul></span>
+            <span class="custom-icon">
+              <img width="20" height="20" src="https://img.icons8.com/ios-glyphs/30/info--v1.png" alt="info--v1"/>            </span>
+          </a>
+
+
+
+        </div>
+      </div>
+
+      
+    
+        
+      
+          <div class="searchFil">
+              <input type="text" id="search-author" placeholder="Search by Author">
+              <input class="searchFil" type="text" id="search-title" placeholder="Search by Title">
+
+          </div>
+       
+
+        <a id="AutList" href="ListAuthors.html" target="_blank">Click here to have an overview list of all the authors</a>
+  
+
+
+    
+        <ul class="list"></ul>
+        <ul class="pagination"></ul>
+
+ 
+ 
+      </div>
+
+
+
+
+   
+   
+
+    
+  
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+
+   
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>I Numeri di Gadda</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/tempo-free-onepage-bootstrap-theme/ -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="github"><i class="bx bxl-github"></i></a>
+       
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/library.js"></script>
+
+  <script>
+     /**
+   * Initiate Pure Counter 
+   */
+  new PureCounter();
+
+  </script>
+
+</body>
+
+</html>
