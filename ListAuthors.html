@@ -43,6 +43,37 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+  <style>
+     .count-circle {
+            background-color: #b7491d;
+            color: #fff;
+            float: right;
+            padding: 5px 10px;
+            font-size: 10px;
+            border-radius: 50%;
+            margin-left: 5px;
+        }
+
+        #authorsList li {
+            border-bottom: 1px solid #cccccc;
+    padding: 10px;
+    list-style: none;
+        }
+
+        #authorsList
+        {border: 1px solid #cccccc;
+          border-radius: 7px;}
+/*#authorsList {
+    column-count: 2;  
+    column-gap: 20px;  
+}
+
+#authorsList li {
+    display: inline-block;
+    width: 100%; 
+}*/
+
+    </style>
 </head>
 
 <body>
@@ -50,25 +81,31 @@
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center justify-content-between">
-     <h1 class="logo"><a href="index.html">NdG</a></h1>
-        
+      <h1 class="logo">
+        <a href="index.html" style="display: flex; align-items: center; text-decoration: none; color: #fff;">
+            <div class="logo">
+                <img src="assets/img/bookwhite.svg" alt="Icon Image" style="width: 50px; height: auto; margin-right: 10px; fill: #ffffff;">
+            </div>
+            NdG
+        </a>
+    </h1>   
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
+          <li><a class="nav-link scrollto active" href="#hero2">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li class="dropdown"><a href="#"><span>Archive</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="databasearch.html">Database</a></li>
+              <li><a href="#">Database</a></li>
               <li><a href="#">Data Visualization</a></li>
             </ul>
           </li>
           <li class="dropdown"><a href="#"><span>Library</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="library.html">Database</a></li>
-              <li><a href="#">Data Visualization</a></li>
+              <li><a href="Viz.html">Data Visualization</a></li>
             </ul>
           </li>
           <li><a class="nav-link scrollto" href="#team">Team</a></li>
@@ -80,8 +117,7 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero2" style="
-  height: 50vh;">
+  <section id="hero" style="height: 40vh";>
     
   </section><!-- End Hero -->
 
@@ -30092,74 +30128,103 @@
 }
 ];
     // Get the <ul> element to display the authors
-    var ul = document.getElementById("authorsList");
+        var ul = document.getElementById("authorsList");
 
-    // Get the <div> for alphabet buttons
-    var alphabetButtonsDiv = document.getElementById("alphabetButtons");
+// Get the <div> for alphabet buttons
+var alphabetButtonsDiv = document.getElementById("alphabetButtons");
 
-    // Function to filter authors by the starting letter
-    function filterAuthors(letter) {
-        // Clear the current list
-        ul.innerHTML = '';
+// Function to filter authors by the starting letter
+function filterAuthors(letter) {
+    // Clear the current list
+    ul.innerHTML = '';
 
-        // Create a Set to store unique authors for the current letter
-        var uniqueAuthors = new Set();
+    // Create a Map to store unique authors and their counts for the current letter
+    var authorCounts = new Map();
 
-        // Populate the list with filtered authors, ensuring uniqueness
-       // Populate the list with filtered authors, ensuring uniqueness
-jsonData.forEach(function (entry) {
-    if (entry.Authors !== null && entry.Authors.trim().charAt(0).toLowerCase() === letter) {
-        if (!uniqueAuthors.has(entry.Authors)) {
-            var li = document.createElement("li");
-
-            // Create a link to index.html with the selected author as a query parameter
-            var link = document.createElement("a");
-            link.href = `library.html?author=${encodeURIComponent(entry.Authors)}`;
-            link.textContent = entry.Authors;
-
-            // Append the link to the list item
-            li.appendChild(link);
-
-            ul.appendChild(li);
-            uniqueAuthors.add(entry.Authors);
-        }
-    }
-});
-    }
-
-    // Create buttons for each letter of the alphabet
-    for (var letter = 'a'; letter <= 'z'; letter = String.fromCharCode(letter.charCodeAt(0) + 1)) {
-        var button = document.createElement("button");
-        button.textContent = letter.toUpperCase();
-        button.addEventListener('click', function () {
-            filterAuthors(this.textContent.toLowerCase());
-        });
-        alphabetButtonsDiv.appendChild(button);
-    }
-
-    // Add a "Show All" button
-    var showAllButton = document.getElementById("showAllButton");
-    showAllButton.addEventListener('click', function () {
-        // Show all non-null authors
-        ul.innerHTML = '';
-
-        // Create a Set to store unique authors for the entire list
-        var uniqueAuthors = new Set();
-
-        // Populate the list with all non-null authors, ensuring uniqueness
-        jsonData.forEach(function (entry) {
-            if (entry.Authors !== null) {
-                if (!uniqueAuthors.has(entry.Authors)) {
-                    var li = document.createElement("li");
-                    li.textContent = entry.Authors;
-                    ul.appendChild(li);
-                    uniqueAuthors.add(entry.Authors);
-                }
+    // Populate the list with filtered authors, counting occurrences
+    jsonData.forEach(function (entry) {
+        if (entry.Authors !== null && entry.Authors.trim().charAt(0).toLowerCase() === letter) {
+            var author = entry.Authors;
+            if (!authorCounts.has(author)) {
+                authorCounts.set(author, 1);
+            } else {
+                authorCounts.set(author, authorCounts.get(author) + 1);
             }
-        });
+        }
     });
-    // Initially, show all authors
-    filterAuthors('a');
+
+    // Display authors and counts in the list
+    authorCounts.forEach(function (count, author) {
+        var li = document.createElement("li");
+
+        // Create a link to index.html with the selected author as a query parameter
+        var link = document.createElement("a");
+        link.href = `library.html?author=${encodeURIComponent(author)}`;
+        link.textContent = `${author}`;
+
+        // Create a span for the count circle
+        var countCircle = document.createElement("span");
+        countCircle.className = "count-circle";
+        countCircle.textContent = count;
+
+        // Append the link and count circle to the list item
+        li.appendChild(link);
+        li.appendChild(countCircle);
+
+        ul.appendChild(li);
+    });
+}
+
+// Create buttons for each letter of the alphabet
+for (var letter = 'a'; letter <= 'z'; letter = String.fromCharCode(letter.charCodeAt(0) + 1)) {
+    var button = document.createElement("button");
+    button.textContent = letter.toUpperCase();
+    button.addEventListener('click', function () {
+        filterAuthors(this.textContent.toLowerCase());
+    });
+    alphabetButtonsDiv.appendChild(button);
+}
+
+// Add a "Show All" button
+var showAllButton = document.getElementById("showAllButton");
+showAllButton.addEventListener('click', function () {
+    // Show all non-null authors
+    ul.innerHTML = '';
+
+    // Create a Map to store unique authors and their counts for the entire list
+    var authorCounts = new Map();
+
+    // Populate the list with all non-null authors, counting occurrences
+    jsonData.forEach(function (entry) {
+        if (entry.Authors !== null) {
+            var author = entry.Authors;
+            if (!authorCounts.has(author)) {
+                authorCounts.set(author, 1);
+            } else {
+                authorCounts.set(author, authorCounts.get(author) + 1);
+            }
+        }
+    });
+
+    // Display authors and counts in the list
+    authorCounts.forEach(function (count, author) {
+        var li = document.createElement("li");
+
+        // Create a span for the count circle
+        var countCircle = document.createElement("span");
+        countCircle.className = "count-circle";
+        countCircle.textContent = count;
+
+        // Append the author name and count circle to the list item
+        li.textContent = `${author}`;
+        li.appendChild(countCircle);
+
+        ul.appendChild(li);
+    });
+});
+
+// Initially, show all authors
+filterAuthors('a');
 </script>
 </body>
 </html>

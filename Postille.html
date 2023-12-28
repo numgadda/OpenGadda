@@ -23,23 +23,22 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-   <!-- Include jQuery -->
-   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>  
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/list.pagination.js/0.1.1/list.pagination.js" integrity="sha512-DgwxWpg8sBTL8c/Q3AB2agigdCpBRVWb3WRNlgaxHWqCNxzv/80XVYXCHSftOrigEF/h8wv+lPjngSAq3fHlGw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>   
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
 
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 
-   <!-- Include DataTables CSS -->
-   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.pagination.js/0.1.1/list.pagination.js" integrity="sha512-DgwxWpg8sBTL8c/Q3AB2agigdCpBRVWb3WRNlgaxHWqCNxzv/80XVYXCHSftOrigEF/h8wv+lPjngSAq3fHlGw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>   
+ 
 
-   <!-- Include DataTables JS -->
-   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-   <!-- Include jQuery UI for DataTables CSS (optional, for additional styling) -->
-   <link rel="stylesheet" type="text/css" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
-  <!-- Template Main CSS File -->
+ 
+ <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
   <!-- =======================================================
@@ -50,48 +49,68 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
   <style>
-    /* Change the background color of the table header */
-#file2-table thead th {
-  background-color: #b7491d;
+
+#cardsAnnotations ul {
+position: relative;
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+#cardsAnnotations li 
+{
+  float:left;
+  position: relative;
+  margin: 0 2px 0 0;
+  border-bottom: 0;
+  width:fit-content;
+  text-align:center;
+}
+
+
+#cardsAnnotations li a {
+  text-decoration:none;
+  display:block;
+  padding: 8px 15px;
+  color: #b7491d;
+  font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s;
+    animation-delay: 0.8s;
+  border-radius: 10px 10px 0 0;
+  border: 2px solid #b7491d;
+  cursor: pointer;
+}
+
+
+#cardsAnnotations li a:hover {
+    background: #b7491d;
   color: #f7f2df;
+  text-decoration: none;
 }
 
-/* Change the background color of even rows */
-#file2-table tbody tr:nth-child(even) {
-  background-color: #f7f2df;
+
+
+
+#myTabs .nav-link.active,
+#myTabs .nav-link:focus{
+  background: #b7491d !important;
+  color: #f7f2df !important;
+  text-decoration: none;
 }
 
-/* Change the background color of odd rows */
-#file2-table tbody tr:nth-child(odd) {
-  background-color: #dad3b5;
+#containerPosParl{
+    display:block;
+  background-color: transparent;
+  padding:10px;
+  box-shadow: 0px 3px 5px #b7491d;
+  /*box-shadow: inset 0 1px 0 #fff;*/
+  border-radius: 5px;
+  margin: 10px;
 }
 
-/* Change the text color of cells */
-#file2-table tbody td {
-  color: #2b240c;
-}
 
-/* CSS */
-/* CSS */
-/* Style the 'N' column */
-/* CSS */
-/* Style the 'N' column for odd rows */
-#file2-table tbody tr:nth-child(odd) td:nth-child(1) {
-  /* Apply styles for odd rows in the 'N' column */
-  background-color: #dad3b5; /* Example background color */
-  color: #2b240c; /* Example text color */
-}
-
-/* Style the 'N' column for even rows */
-#file2-table tbody tr:nth-child(even) td:nth-child(1) {
-  /* Apply styles for even rows in the 'N' column */
-  background-color: #f7f2df; /* Example background color */
-  color: #2b240c; /* Example text color */
-}
-
-.dataTables_filter {
-    margin: 15px
-}
    </style>
 
 </head>
@@ -101,18 +120,24 @@
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top ">
     <div class="container d-flex align-items-center justify-content-between">
-     <h1 class="logo"><a href="index.html">NdG</a></h1>
-        
+        <h1 class="logo">
+            <a href="index.html" style="display: flex; align-items: center; text-decoration: none; color: #fff;">
+                <div class="logo">
+                    <img src="assets/img/bookwhite.svg" alt="Icon Image" style="width: 50px; height: auto; margin-right: 10px; fill: #ffffff;">
+                </div>
+                NdG
+            </a>
+        </h1>    
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a class="nav-link scrollto active" href="index.html">Home</a></li>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
           <li class="dropdown"><a href="#"><span>Archive</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="databasearch.html">Database</a></li>
+              <li><a href="#">Database</a></li>
               <li><a href="#">Data Visualization</a></li>
             </ul>
           </li>
@@ -139,22 +164,45 @@
 
     <h1>Annotations</h1>
     <h1 id="page-title" style="font-style: italic;">Annotations</h1>
-
-        <!-- Display data from file2 here in a tabular format -->
-        <table id="file2-table" class="display" style="width:100%">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Nota di possesso</th>
-                    <th>Dedica</th>
-                    <th>Collocazione</th>
-                    <th>Postilla parlata</th>
-                    <th>Postilla muta</th>
-                </tr>
-            </thead>
-            <!-- Table data rows will be added using JavaScript -->
-        </table>
+    
+    <div class=" mt-4" id="cardsAnnotations">
+        <ul class="nav nav-tabs" id="myTabs">
+            <li class="nav-item">
+                <a class="nav-link " id="nota-di-possesso-tab" data-toggle="tab" href="#nota-di-possesso">Annotation of Ownership</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="dedica-tab" data-toggle="tab" href="#dedica">Dedication</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="postilla-muta-tab" data-toggle="tab" href="#postilla-muta">Markings</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="collocazione-postilla-parlata-tab" data-toggle="tab" href="#collocazione-postilla-parlata">Pericope & Annotation</a>
+            </li>
+        </ul>
+    
+        <div class="tab-content mt-2">
+            <div class="tab-pane fade " id="nota-di-possesso">
+                <div id="nota-di-possesso-card"></div>
+            </div>
+            <div class="tab-pane fade" id="dedica">
+                <div id="dedica-card"></div>
+            </div>
+            <div class="tab-pane fade" id="postilla-muta">
+                <div id="postilla-muta-card"></div>
+            </div>
+            <div class="tab-pane fade" id="collocazione-postilla-parlata">
+                <div id="collocazione-postilla-parlata-card"></div>
+            </div>
+        </div>
+    </div>
+   
+   
+    
     </main><!-- End #main -->
+
+
+
 
     <!-- ======= Footer ======= -->
     <footer id="footer">
@@ -51886,49 +51934,133 @@ const jsonData =[{
 }];
 // Define the getParameterByName function to extract URL parameters
 function getParameterByName(name, url) {
-        if (!url) url = window.location.href;
-        name = name.replace(/[\[\]]/g, '\\$&');
-        var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
-            results = regex.exec(url);
-        if (!results) return null;
-        if (!results[2]) return '';
-        return decodeURIComponent(results[2].replace(/\+/g, ' '));
-    }
+    if (!url) url = window.location.href;
+    name = name.replace(/[\[\]]/g, '\\$&');
+    var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+        results = regex.exec(url);
+    if (!results) return null;
+    if (!results[2]) return '';
+    return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
 
-    const selectedId = parseInt(getParameterByName('id')); // Parse as a number
+const selectedId = parseInt(getParameterByName('id')); // Parse as a number
 
-console.log('Selected ID:', selectedId);
+// Function to find all matching items in an array based on Id
+function findMatchingItems(array, id) {
+    return array.filter(item => item.Id === id);
+}
 
-// Find the matching item in jsonData based on Id
-const matchingItem = jsonData.find(item => item.Id === selectedId);
-
-console.log('Matching Item:', matchingItem);
+// Find matching items in jsonData based on Id
+const matchingItems = findMatchingItems(jsonData, selectedId);
 
 // Set the title of the page based on the selected item's title
 const pageTitle = document.getElementById('page-title');
-if (matchingItem && matchingItem.Title) {
-    pageTitle.innerText = matchingItem.Title;
+if (matchingItems.length > 0 && matchingItems[0].Title) {
+    pageTitle.innerText = matchingItems[0].Title; // Assuming you want to use the title of the first matching item
 } else {
     pageTitle.innerText = 'Annotations';
     console.error('Title not found or undefined.');
 }
 
-// Initialize DataTables on the table
-$(document).ready(function () {
-    const matchingItemsForTable = file2Data.filter(item => item.Id === selectedId);
-    
-    $('#file2-table').DataTable({
-        data: matchingItemsForTable,
-        columns: [
-            { data: 'Id' },
-            { data: 'Nota di possesso' },
-            { data: 'Dedica' },
-            { data: 'Collocazione' },
-            { data: 'Postilla parlata' },
-            { data: 'Postilla muta' },
-        ],
-        paging: false, // Disable paging for a single item
-    });
+// Find matching items in file2Data based on Id
+const matchingItemsFile2 = findMatchingItems(file2Data, selectedId);
+
+// Display data for the matching items from file2Data in the tabs
+const notaDiPossessoCard = document.getElementById('nota-di-possesso-card');
+const dedicaCard = document.getElementById('dedica-card');
+const postillaMutaCard = document.getElementById('postilla-muta-card');
+const collocazionePostillaParlataCard = document.getElementById('collocazione-postilla-parlata-card');
+
+// Clear the existing content in the cards
+notaDiPossessoCard.innerHTML = '';
+dedicaCard.innerHTML = '';
+postillaMutaCard.innerHTML = '';
+collocazionePostillaParlataCard.innerHTML = '';
+
+matchingItemsFile2.forEach(matchingItemFile2 => {
+    appendToCard(notaDiPossessoCard, 'Nota di Possesso', matchingItemFile2['Nota di possesso']);
+    appendToCard(dedicaCard, 'Dedica', matchingItemFile2['Dedica']);
+    appendToCard(postillaMutaCard, 'Postilla Muta', matchingItemFile2['Postilla muta']);
+
+    const collocazione = matchingItemFile2['Collocazione'];
+    const postillaParlata = matchingItemFile2['Postilla parlata'];
+
+   // toglie le tabs se sono vuote
+    function updateTabVisibility(tabId, cardId, dataKey) {
+    const tab = document.getElementById(tabId);
+    const card = document.getElementById(cardId);
+
+    const hasData = matchingItemsFile2.some(matchingItemFile2 => matchingItemFile2[dataKey]);
+
+
+    // mostra le tab che anno contento come attie
+    if (hasData) {
+        tab.style.display = 'block';
+
+        // Activate the tab using Bootstrap's JavaScript methods
+        const tabInstance = new bootstrap.Tab(tab);
+        tabInstance.show();
+
+        // Also, activate the corresponding nav-link
+        const navLink = document.querySelector(`[href="#${tabId}"]`);
+        if (navLink) {
+            navLink.classList.add('active');
+        }
+    } else {
+        tab.style.display = 'none';
+    }
+}
+
+// Usage for different tabs
+updateTabVisibility('nota-di-possesso-tab', 'nota-di-possesso-card', 'Nota di possesso');
+updateTabVisibility('dedica-tab', 'dedica-card', 'Dedica');
+updateTabVisibility('postilla-muta-tab', 'postilla-muta-card', 'Postilla muta');
+updateTabVisibility('collocazione-postilla-parlata-tab', 'collocazione-postilla-parlata-card', 'Collocazione');
+
+
+
+
+
+
+
+    const container = document.createElement('div');
+    // Add the class to the container
+    container.id = 'containerPosParl';
+document.body.appendChild(container);
+
+
+    if (collocazione !== null) {
+        container.innerHTML += `<strong>Pericope:</strong> ${collocazione}`;
+    }
+
+    if (collocazione !== null && postillaParlata !== null) {
+        container.innerHTML += ` |<br> `;
+    }
+
+    if (postillaParlata !== null && collocazione !== postillaParlata) {
+        container.innerHTML += `<strong>Annotation:</strong> ${postillaParlata}`;
+    }
+
+    // Append the container to the respective card
+    collocazionePostillaParlataCard.appendChild(container);
+     // Check if the card is empty and set the title in red
+     
 });
+    // Append the list item to a list container (if you have one)
+    // Or you can append it directly to the document body, for example
+
+    // Helper function to append content to a card
+    function appendToCard(card, label, value) {
+    const listItem = document.createElement('p');
+    if (value !== null) {
+        listItem.innerHTML = `${value}`;
+        card.appendChild(listItem);
+    }
+};
+
+
+
     </script>
+        </body>
+
 </html>

@@ -20,6 +20,11 @@ a {
   text-decoration: none;
 }
 
+
+.list a {
+  text-decoration: underline;
+
+}
 a:hover {
   color: #cd8061;
   text-decoration: none;
