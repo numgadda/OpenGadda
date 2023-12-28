@@ -235,20 +235,27 @@
 
   <script>
 // Function to fetch filtered data from another HTML page
+// Function to fetch filtered data from another HTML page
+// Function to fetch filtered data from another HTML page
 function fetchDataFromAnotherPage() {
-      // Fetch the filtered data from the URL of the other HTML page
-      const urlParams = new URLSearchParams(window.location.search);
-      const libraryValue = urlParams.get('libraryValue');
-      const filteredDataString = urlParams.get('filteredData');
-      const filteredData = JSON.parse(decodeURIComponent(filteredDataString));
+  const urlParams = new URLSearchParams(window.location.search);
+  const filteredDataID = urlParams.get('filteredDataID');
+  
+  const filteredDataObjectString = localStorage.getItem('filteredDataObject');
+  const filteredDataObject = JSON.parse(filteredDataObjectString);
 
+  if (filteredDataID && filteredDataObject) {
+    // Access the filtered data using the unique ID
+    const filteredData = filteredDataObject[filteredDataID];
+
+    if (filteredData) {
       // Display filtered data in list format
       const filteredDataList = document.querySelector('.list');
 
       filteredData.forEach(item => {
         const listItem = document.createElement('li');
         listItem.innerHTML = `
-          <div>
+        <div>
             <p><b>Authors:</b> ${item.Authors}</p>
             <p><b>Title:</b> ${item.Title}</p>
             <p><b>Cities:</b> ${item.Cities}</p>
@@ -263,10 +270,18 @@ function fetchDataFromAnotherPage() {
         `;
         filteredDataList.appendChild(listItem);
       });
+      return; // Exit the function after displaying data
     }
+  }
 
-    // Call the function to fetch and display the filtered data
-    fetchDataFromAnotherPage();
+  // Handle cases where no matching data or an invalid request is encountered
+  const errorContainer = document.querySelector('.error');
+  errorContainer.textContent = 'No matching data found or invalid request.';
+}
+
+// Call the function to fetch and display the filtered data
+fetchDataFromAnotherPage();
+
 
     // Function to update count
     function updateCount(count) {
