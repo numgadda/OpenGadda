@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Filtered Data</title>
+  <!-- Include necessary CSS files -->
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <!-- Include Leaflet CSS and JavaScript -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+   <!-- Include jQuery -->
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>  
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/list.pagination.js/0.1.1/list.pagination.js" integrity="sha512-DgwxWpg8sBTL8c/Q3AB2agigdCpBRVWb3WRNlgaxHWqCNxzv/80XVYXCHSftOrigEF/h8wv+lPjngSAq3fHlGw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>   
+
+<!-- Include jQuery UI -->
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+   <!-- Include DataTables CSS -->
+   <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+
+   <!-- Include DataTables JS -->
+   <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+<!-- jQuery -->
+
+
+<!-- jQuery UI -->
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.13.1/jquery-ui.js"></script>
+
+
+  <link href="assets/css/styleanotherpage.css" rel="stylesheet">
+</head>
+<body>
+ <!-- ======= Header ======= -->
+ <header id="header" class="fixed-top ">
+  <div class="container d-flex align-items-center justify-content-between">
+   <h1 class="logo"><a href="index.html">NdG</a></h1>
+      
+    <!-- Uncomment below if you prefer to use an image logo -->
+    <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+        <li><a class="nav-link scrollto" href="#about">About</a></li>
+        <li class="dropdown"><a href="#"><span>Archive</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a href="#">Database</a></li>
+            <li><a href="#">Data Visualization</a></li>
+          </ul>
+        </li>
+        <li class="dropdown"><a href="#"><span>Library</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a href="library.html">Database</a></li>
+            <li><a href="#">Data Visualization</a></li>
+          </ul>
+        </li>
+        <li><a class="nav-link scrollto" href="#team">Team</a></li>
+      </ul>
+      <i class="bi bi-list mobile-nav-toggle"></i>
+    </nav><!-- .navbar -->
+
+  </div>
+</header>
+  <!-- ======= Hero Section ======= -->
+  <section id="hero2">
+  </section>
+
+  <div class="wrapper">
+    <!-- Sidebar -->
+    <div id="sidebar">
+      <div class="sidebar-header">
+        <h3>Filter through the catalog</h3>
+      </div>
+      <div id="sidebar-content">
+        <p>Explore the four conservation funds that collect Gadda's library:</p>
+        <div class="filter-buttons">
+          <button id="clearFilter">Show All</button>
+          <button id="filterBTB">BTB</button>
+          <button id="filterBAL">BAL</button>
+          <button id="filterBTM">BTM</button>
+          <button id="filterBAC">BAC</button>
+        </div>
+        <p>Visualize only the Text annotated by Gadda:</p>
+  <button id="showNonNullSegniButton">Show annotated texts</button>
+
+
+   <!-- Buttons for sorting -->
+   <div class="sort-buttons">
+    <button onclick="sortData('Authors')">Sort by author</button>
+    <button onclick="sortData('Title')">Sort by title</button>
+    <button onclick="sortData('Years')">Sort by year</button>
+  </div>
+
+ 
+</div>
+</div>
+
+<div id="main">
+  <h1><a href="library.html">Library Catalog</a></h1>
+     <!-- Search by Author -->
+    <!-- Search all -->
+    <div class="search-heading">
+      <input type="text" id="searchInput" placeholder="Search..." oninput="performSearch()">
+    </div>
+    <div class="search-container">
+  <div class="search-container">
+    <input type="text" id="authorInput" placeholder="Search by Author..." oninput="searchByAuthor()">
+  </div>
+
+  <!-- Search by Title -->
+  <div class="search-container">
+    <input type="text" id="titleInput" placeholder="Search by Title..." oninput="searchByTitle()">
+  </div>
+  </div>
+  <p><a id="AutList" href="ListAuthors.html" target="_blank">Click here to have an overview list of all the authors</a>
+  </p>
+  <div style="display: flex; ">
+    <div class="count-container">
+          <img width="50" height="50" src="https://img.icons8.com/ios/50/literature--v1.png" alt="literature--v1"/>
+          <span class="count">0</span>
+        </div>
+        </div>
+  <ul class="list">
+
+    <!-- Placeholder for the filtered data -->
+  </ul>
+  </div>
+  </div>
+
+  <div class="pagination">
+    <!-- Pagination buttons will be added here -->
+  </div>
+  
+  <footer id="footer">
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-3 col-md-6 footer-contact">
+            <h3>Tempo</h3>
+            <p>
+              A108 Adam Street <br>
+              New York, NY 535022<br>
+              United States <br><br>
+              <strong>Phone:</strong> +1 5589 55488 55<br>
+              <strong>Email:</strong> info@example.com<br>
+            </p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3 col-md-6 footer-links">
+            <h4>Our Services</h4>
+            <ul>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-newsletter">
+            <h4>Join Our Newsletter</h4>
+            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <form action="" method="post">
+              <input type="email" name="email"><input type="submit" value="Subscribe">
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>Tempo</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/tempo-free-onepage-bootstrap-theme/ -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+        <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
+        <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
+        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <script>
+// Function to fetch filtered data from another HTML page
+function fetchDataFromAnotherPage() {
+      // Fetch the filtered data from the URL of the other HTML page
+      const urlParams = new URLSearchParams(window.location.search);
+      const libraryValue = urlParams.get('libraryValue');
+      const filteredDataString = urlParams.get('filteredData');
+      const filteredData = JSON.parse(decodeURIComponent(filteredDataString));
+
+      // Display filtered data in list format
+      const filteredDataList = document.querySelector('.list');
+
+      filteredData.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = `
+          <div>
+            <p><b>Authors:</b> ${item.Authors}</p>
+            <p><b>Title:</b> ${item.Title}</p>
+            <p><b>Cities:</b> ${item.Cities}</p>
+            <p><b>Publisher:</b> ${item.Publisher}</p>
+            <p><b>Years:</b> ${item.Years}</p>
+            <p><b>Fund:</b> ${item.Fund}</p>
+            <p><b>Segni:</b> ${item.Segni}</p>
+            <p><b>Category:</b> ${item.Category}</p>
+            <p><b>Schede tematiche:</b> ${item['schede tematiche']}</p>
+          </div>
+          <hr>
+        `;
+        filteredDataList.appendChild(listItem);
+      });
+    }
+
+    // Call the function to fetch and display the filtered data
+    fetchDataFromAnotherPage();
+
+    // Function to update count
+    function updateCount(count) {
+      document.querySelector('.count').textContent = count;
+    }
+
+    // Function to perform search by Author
+    function searchByAuthor() {
+      const authorText = document.getElementById('authorInput').value.toLowerCase();
+      const items = document.querySelectorAll('.list li');
+
+      let count = 0;
+      items.forEach(item => {
+        const author = item.querySelector('p:nth-child(1)').textContent.toLowerCase();
+        const displayStyle = author.includes(authorText) ? 'block' : 'none';
+        item.style.display = displayStyle;
+
+        if (displayStyle === 'block') {
+          count++;
+        }
+      });
+
+      updateCount(count);
+    }
+
+    // Function to perform search by Title
+    function searchByTitle() {
+      const titleText = document.getElementById('titleInput').value.toLowerCase();
+      const items = document.querySelectorAll('.list li');
+
+      let count = 0;
+      items.forEach(item => {
+        const title = item.querySelector('p:nth-child(2)').textContent.toLowerCase();
+        const displayStyle = title.includes(titleText) ? 'block' : 'none';
+        item.style.display = displayStyle;
+
+        if (displayStyle === 'block') {
+          count++;
+        }
+      });
+
+      updateCount(count);
+    }
+
+    // Function to perform search on all fields
+    function performSearch() {
+      const searchText = document.getElementById('searchInput').value.toLowerCase();
+      const items = document.querySelectorAll('.list li');
+
+      let count = 0;
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        const displayStyle = text.includes(searchText) ? 'block' : 'none';
+        item.style.display = displayStyle;
+
+        if (displayStyle === 'block') {
+          count++;
+        }
+      });
+
+      updateCount(count);
+    }
+
+ // Function to sort data by Years
+ function sortData(key) {
+    const items = document.querySelectorAll('.list li');
+    const sortedItems = Array.from(items).sort((a, b) => {
+      if (key === 'Years') {
+        const valueA = parseInt(a.querySelector('p:nth-child(5)').textContent.split(':')[1].trim());
+        const valueB = parseInt(b.querySelector('p:nth-child(5)').textContent.split(':')[1].trim());
+        return valueA - valueB;
+      } else {
+        const valueA = a.querySelector(`p:nth-child(${key === 'Authors' ? 1 : 2})`).textContent.toLowerCase();
+        const valueB = b.querySelector(`p:nth-child(${key === 'Authors' ? 1 : 2})`).textContent.toLowerCase();
+        return valueA.localeCompare(valueB);
+      }
+    });
+
+    const filteredDataList = document.querySelector('.list');
+    filteredDataList.innerHTML = '';
+
+    sortedItems.forEach(item => {
+      filteredDataList.appendChild(item);
+    });
+  }
+// Function to show only 'Segni' values not 'null'
+function showNonNullSegni() {
+      const listItems = document.querySelectorAll('.list li');
+
+      listItems.forEach(item => {
+        const itemText = item.textContent;
+        const segniStartIndex = itemText.indexOf('Segni:') + 6; // 6 is the length of 'Segni:'
+        let segniEndIndex = itemText.indexOf('\n', segniStartIndex); // Find the newline character
+        if (segniEndIndex === -1) {
+          segniEndIndex = itemText.indexOf('<br>', segniStartIndex); // Find the <br> tag if newline not found
+        }
+
+        const segniValue = itemText.slice(segniStartIndex, segniEndIndex).trim();
+        if (segniValue === 'null') {
+          item.style.display = 'none'; // Hide list items with 'Segni: null'
+        }
+      });
+    }
+
+    // Add click event listener to the button
+    const showNonNullSegniButton = document.getElementById('showNonNullSegniButton');
+    showNonNullSegniButton.addEventListener('click', showNonNullSegni);
+    function filterListByValue(value) {
+      const listItems = document.querySelectorAll('.list li');
+
+      listItems.forEach(item => {
+        const itemText = item.textContent;
+        const regex = /Fund:\s+(.*?)\s+Segn\./;
+        const match = itemText.match(regex);
+
+        if (match && match[1]) {
+          const fund = match[1].trim();
+          console.log('Fund value:', fund);
+
+          // Split values by "&" and check each separated value
+          const separatedValues = fund.split('&');
+
+          // Check if the current item contains the selected value
+          if (separatedValues.some(v => v.trim() === value)) {
+            item.style.display = 'block';
+          } else {
+            item.style.display = 'none';
+          }
+        }
+      });
+    }
+// Function to filter list by Fund value
+function filterListByValue(value) {
+  const listItems = document.querySelectorAll('.list li');
+
+  listItems.forEach(item => {
+    const itemText = item.textContent;
+    const regex = /Fund:\s(.*?)(?=\n|$)/; // Adjusted regex pattern
+    const match = itemText.match(regex);
+
+    if (match && match[1]) {
+      const fund = match[1].trim();
+      console.log('Fund value:', fund);
+
+      // Check if the current item contains the selected value
+      if (fund.includes(value)) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    }
+  });
+}
+
+// Add click event listener to the buttons for filtering by Fund values
+document.getElementById('filterBTB').addEventListener('click', function() {
+  filterListByValue('BTB');
+});
+
+document.getElementById('filterBAL').addEventListener('click', function() {
+  filterListByValue('BAL');
+});
+
+document.getElementById('filterBTM').addEventListener('click', function() {
+  filterListByValue('BTM');
+});
+
+document.getElementById('filterBAC').addEventListener('click', function() {
+  filterListByValue('BAC');
+});
+
+// Function to show all list items
+function showAllItems() {
+  const listItems = document.querySelectorAll('.list li');
+  listItems.forEach(item => {
+    item.style.display = 'block';
+  });
+}
+
+// Add click event listener to the clear filter button
+document.getElementById('clearFilter').addEventListener('click', function() {
+  showAllItems();
+});
+
+const itemsPerPage = 5; // Number of items to display per page
+const listItems = document.querySelectorAll('.list li');
+const totalItems = listItems.length;
+let currentPage = 1;
+
+function showPage(pageNumber) {
+  listItems.forEach((item, index) => {
+    const start = (pageNumber - 1) * itemsPerPage;
+    const end = pageNumber * itemsPerPage;
+
+    if (index >= start && index < end) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+
+function updatePaginationUI() {
+  const totalPages = Math.ceil(totalItems / itemsPerPage);
+  const pagination = document.querySelector('.pagination');
+  pagination.innerHTML = '';
+
+  const numPagesToShow = 5;
+  const startPage = Math.max(1, currentPage - 2);
+  const endPage = Math.min(totalPages, startPage + numPagesToShow - 1);
+
+  const prevButton = document.createElement('button');
+  prevButton.textContent = 'Previous';
+  prevButton.addEventListener('click', () => {
+    if (currentPage > 1) {
+      currentPage--;
+      showPage(currentPage);
+      updatePaginationUI();
+    }
+  });
+  pagination.appendChild(prevButton);
+
+  for (let i = startPage; i <= endPage; i++) {
+    const pageButton = document.createElement('button');
+    pageButton.textContent = i;
+    pageButton.addEventListener('click', () => {
+      currentPage = i;
+      showPage(currentPage);
+      updatePaginationUI();
+    });
+    pagination.appendChild(pageButton);
+  }
+
+  const nextButton = document.createElement('button');
+  nextButton.textContent = 'Next';
+  nextButton.addEventListener('click', () => {
+    if (currentPage < totalPages) {
+      currentPage++;
+      showPage(currentPage);
+      updatePaginationUI();
+    }
+  });
+  pagination.appendChild(nextButton);
+}
+
+// Show initial page
+showPage(currentPage);
+// Update pagination UI
+updatePaginationUI();
+// Function to update count based on visible items
+function updateCount() {
+  const visibleItems = document.querySelectorAll('.list li[style="display: block;"]');
+  const count = visibleItems.length;
+  document.querySelector('.count').textContent = count;
+}
+
+// Update count initially and whenever there's a change in the list display
+updateCount();
+
+// Add event listeners for input changes or filters that might change the list display
+document.getElementById('authorInput').addEventListener('input', updateCount);
+document.getElementById('titleInput').addEventListener('input', updateCount);
+document.getElementById('searchInput').addEventListener('input', updateCount);
+document.getElementById('showNonNullSegniButton').addEventListener('click', updateCount);
+document.getElementById('filterBTB').addEventListener('click', updateCount);
+document.getElementById('filterBAL').addEventListener('click', updateCount);
+document.getElementById('filterBTM').addEventListener('click', updateCount);
+document.getElementById('filterBAC').addEventListener('click', updateCount);
+document.getElementById('clearFilter').addEventListener('click', updateCount);
+
+
+  </script>
+</body>
+</html>
