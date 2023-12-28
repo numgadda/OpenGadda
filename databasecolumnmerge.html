@@ -43263,7 +43263,10 @@ const uniqueLibraries = libraries ? [...new Set(libraries.map(library => library
 
 let clickableData = modifiedData;
 
+// Create a map for library values and their respective clickable links
+const libraryLinks = {};
 
+// Truncate library names
 const MAX_LENGTH = 10; // Define the maximum length for the displayed library names
 
 // ...
