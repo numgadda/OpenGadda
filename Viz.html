@@ -1,0 +1,1699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+
+  <title>Viz</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+  <link href="assets/css/cssLibrary.css" rel="stylesheet">
+
+  
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+
+  <link href="assets/css/style.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/2.3.1/list.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>  
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.pagination.js/0.1.1/list.pagination.js" integrity="sha512-DgwxWpg8sBTL8c/Q3AB2agigdCpBRVWb3WRNlgaxHWqCNxzv/80XVYXCHSftOrigEF/h8wv+lPjngSAq3fHlGw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>   
+  <!-- Resources -->
+<script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
+<style>
+
+  
+    #chartdiv {
+  width: 100%;
+  height: 600px;
+}
+#chartdiv1 {
+  width: 100%;
+  height: 600px;
+}
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header2 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 9997;
+  transition: all 0.5s;
+  padding: 15px;
+  overflow-y: auto;
+}
+
+@media (max-width: 992px) {
+  #header2 {
+    width: 300px;
+    background: #fff;
+    border-right: 1px solid #e6e9ec;
+    left: -300px;
+  }
+}
+
+@media (min-width: 992px) {
+  #main {
+    margin-left: 100px;
+  }
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+/* Desktop Navigation */
+.nav-menu * {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nav-menu > ul > li {
+  position: relative;
+  white-space: nowrap;
+}
+
+.nav-menu a {
+  display: flex;
+  align-items: center;
+  color: #b7491d;
+  border: 2px solid #b7491d;
+    padding: 10px 18px;
+  margin-bottom: 8px;
+  transition: 0.3s;
+  font-size: 15px;
+  border-radius: 50px;
+  background: #f7f2df;
+  height: 56px;
+  width: 100%;
+  overflow: hidden;
+  transition: 0.3s;
+}
+
+.nav-menu a i {
+  font-size: 20px;
+}
+
+.nav-menu a span {
+  padding: 0 5px 0 7px;
+  color: #b7491d;
+}
+
+@media (min-width: 992px) {
+  .nav-menu a {
+    width: 56px;
+  }
+  .nav-menu a span {
+    display: none;
+    color: #fff;
+  }
+}
+
+.nav-menu a:hover, .nav-menu .active > a, .nav-menu li:hover > a {
+  color: #f7f2df;
+  background: #b7491d;
+}
+
+.nav-menu a:hover span, .nav-menu .active > a span, .nav-menu li:hover > a span {
+  color: #f7f2df;
+}
+
+.nav-menu a:hover, .nav-menu li:hover > a {
+  width: 100%;
+  color: #f7f2df;
+}
+
+.nav-menu a:hover span, .nav-menu li:hover > a span {
+  display: block;
+}
+
+/* Mobile Navigation */
+.mobile-nav-toggle {
+  position: fixed;
+  right: 15px;
+  top: 15px;
+  z-index: 9998;
+  border: 0;
+  background: none;
+  font-size: 24px;
+  transition: all 0.4s;
+  outline: none !important;
+  line-height: 1;
+  cursor: pointer;
+  text-align: right;
+}
+
+.mobile-nav-toggle i {
+  color: #45505b;
+}
+
+.mobile-nav-active {
+  overflow: hidden;
+}
+
+.mobile-nav-active #header {
+  left: 0;
+}
+
+.mobile-nav-active .mobile-nav-toggle i {
+  color: #b7491d;
+}
+
+
+#containerHome{
+  border: 2px solid #b7491d;
+    border-radius: 50px;
+    margin-right: -39px;
+    color: #b7491d ;
+}
+
+#home {
+  margin-top: 100px;
+}
+
+section{
+  padding: 0 0;
+}
+section {
+    margin-bottom: 1.3rem;
+    margin-top: 1.3rem;
+}
+
+.row{
+  margin: 50px
+}
+
+#nbr{font-weight: bold;
+    font-size: 27px;
+    color: #b7491d;
+}
+
+.highlight{
+  color: #b7491d;
+}
+
+.bold-style{
+font-weight: bold;
+}
+
+
+</style>
+</head>
+<body>
+
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top ">
+      <div class="container d-flex align-items-center justify-content-between">
+       <h1 class="logo"><a href="index.html">NdG</a></h1>
+          
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+  
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+            <li><a class="nav-link scrollto" href="#about">About</a></li>
+            <li class="dropdown"><a href="#"><span>Archive</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="#">Database</a></li>
+                <li><a href="#">Data Visualization</a></li>
+              </ul>
+            </li>
+            <li class="dropdown"><a href="#"><span>Library</span> <i class="bi bi-chevron-down"></i></a>
+              <ul>
+                <li><a href="library.html">Database</a></li>
+                <li><a href="Viz.html">Data Visualization</a></li>
+              </ul>
+            </li>
+            <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav><!-- .navbar -->
+  
+      </div>
+    </header><!-- End Header -->
+  
+   
+   
+   
+    <main id="main" >
+
+    <header id="header2" class="d-flex flex-column justify-content-center">
+
+      <nav class="nav-menu">
+        <ul>
+          <li class="active"><a href="#home"><i class="bx bx-home"></i> <span>  home</span></a></li>
+          <li><a href="#authors"><i class="bx bx-user "></i> <span>authors</span></a></li>
+          <li><a href="#books"><i class="bx bx-book"></i> <span>books</span></a></li>
+          <li><a href="#annotations"><i class="bx bx-edit-alt"></i><span>annotations</span></a></li>
+        
+        </ul>
+      </nav><!-- .nav-menu -->
+  
+    </header><!-- End Header -->
+
+
+    <section id="home" class="home">
+      <div id="containerHome" class="container" data-aos="fade-up" >
+        <h1>Explore Gadda's literary world by browsing through his bookshelves.</h1>
+        
+      </div>
+      <div class="row">
+        <div class="col-sm-12 col-md-7">
+                 
+      <div id="observablehq-image-73bb894e" ></div>
+        </div>
+        <div class="col-sm-12 col-md-5">
+         <p>Delving into <span class="highlight">Gadda's personal library </span>offers a unique insight into the preferences and habits that shaped him as an author. The data extracted from his library allows us to explore the mind of the engineer through a careful analysis. This page presents the data with the goal of providing a straightforward <span class="highlight">visualization </span>of key aspects:
+         
+          <ul>
+            <li><span class="bold-style">Authors</span>. Representation of the writers present in Gadda's library.</li>
+          <li><span class="bold-style">Books</span>. Information about the volumes, including genre and edition year, to offer a comprehensive view of Gadda's literary collection.</li>
+          <li><span class="bold-style">Annotation</span>.Focusing exclusively on the text annotated by Gadda, shedding light on his thoughts and interactions with the content.</li>
+        </ul>
+            </p>
+          </div>
+      </div>
+        </section>
+
+    <section id="authors" class="authors">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+                <div class="col-sm-12 col-md-3">
+                 
+                    <div class="box arrow-right">
+                      
+                     
+Out of 
+<p id="nbr" style="display: inline;"> 2158 </p> authors in his library, here are the <span class="bold-style">top 20</span> personalities who are most prominently represented. The data are shown in a bubble chart format, through scaled circles containing images and text. Each bubble is sized by its value.
+<br>
+<br>
+<span style="font-size: smaller; font-weight: 900; color: #b7491d;">
+<i class="bx bx-chevron-right-circle" style="
+color: #b7491d;;font-weight: 900;font-size: large;"></i> Hover on each bubble to find the number of books of each author
+</span>
+
+ 
+                    </div>
+                  </div>
+                  <div class="col-sm-12 col-md-9">
+      <div class="flourish-embed flourish-bubble-chart" data-src="visualisation/16078984"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+      </div>
+      </div>
+      
+      <div class="row">
+      <div class="col-sm-12 col-md-9">
+      <div id="chartdiv1"></div>
+      </div>
+      <div class="col-sm-12 col-md-3">
+                 
+        <div class="box arrow-right">
+          Among the <span class="bold-style">top six authors</span>, Gadda emerges as the most prevalent, demonstrating both the prominence of his own literary production and a diverse selection of classic authors.
+          <br>
+          <br>
+<span style="font-size: smaller; font-weight: 900; color: #b7491d;">
+<i class="bx bx-chevron-left-circle" style="color: #b7491d;;font-weight: 900;font-size: large;"></i> 
+Interact with the moving bullets of the bar chart to find the number of books
+</span>
+        </div>
+      </div>
+      </div>
+      
+      
+    </section>
+
+
+
+
+        </div>
+    </section>
+
+    <section id="books"  class="books">
+      <div class="row">
+        <div id="genrechart" class="col-sm-12 col-md-9">
+          <div class="flourish-embed flourish-hierarchy" id="genre" data-src="visualisation/16078823" >
+          <script src="https://public.flourish.studio/resources/embed.js"></script></div>    
+            </div>
+        <div class="col-sm-12 col-md-3">
+                   
+          <div class="box arrow-right">
+            As a <span class="highlight">multifaceted reader</span>, Gadda collected books by all genre.
+            <br>
+            His library reflects a rich tapestry of intellectual interests. With a <span class="bold-style">core in Italian literature</span>, it extends globally to encompass history, philosophy, technology, and languages. Beyond traditional genres, the collection spans arts, geography, and military topics, showcasing a multifaceted exploration of human expression and the world.
+            <br>
+The data is organized and presented <span class="bold-style">hierarchically </span>in a radial bar chart. The primary layer represents the genre, while the secondary layer delineates subgenres, ensuring a comprehensive insight.
+<br>
+<br>
+<span style="font-size: smaller; font-weight: 900; color: #b7491d;">
+<i class="bx bx-chevron-left-circle" style="color: #b7491d;;font-weight: 900;font-size: large;"></i> 
+Click on each genre to gain a focused perspective.
+</span>
+          </div>
+        </div>
+        </div>
+        
+
+        <div class="row">
+          <div class="col-sm-12 col-md-3">
+                     
+            <div class="box arrow-right">
+              The chart provides a comprehensive view of the volumes in Gadda's library based on <span class="bold-style">their publication years</span>. The x-axis represents the date-based data, specifically the publication year of the books, while the y-axis depicts the corresponding number of books for each year. This visual representation illuminates the temporal distribution of Gadda's literary collection, offering a clear insight into the ebb and flow of his reading preferences over the years.
+              <br>
+              <br>
+              <span style="font-size: smaller; font-weight: 900; color: #b7491d;">
+              <i class="bx bx-chevron-right-circle" style="color: #b7491d;;font-weight: 900;font-size: large;"></i> 
+              Hover inside the chart to visulize the number of books for each year and use the scrollbar to zoom in.
+              </span>
+
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-9">
+            <div id="chartdiv" style="display: inline-block;"></div>
+          </div>
+          
+          </div>
+          
+
+
+
+  
+  
+</section>
+
+<section id="annotations" class="annotations">
+
+  <div class="row">
+    <div class="col-sm-12 col-md-12">
+      <span class="bold-style" style=" font-size: large;">The books he most <span class="highlight">loved</span> and <span class="highlight">studied</span>.</span>
+<br>
+The data underscores the author's engagement with scholastic volumes. This emphasis on annotated study materials suggests a dedicated scholarly pursuit, where the act of annotating serves as a means of active learning and critical exploration.<br>
+<br>
+</div>
+
+
+  <div class="row" style="margin: 0%;">
+    <div class="col-sm-12 col-md-6">
+     The bar chart shows the <span class="bold-style">10 most annotated books. </span>
+     <br>
+     <br>
+     <span style="font-size: smaller; font-weight: 900; color: #b7491d;">
+     <i class="bx bx-chevron-left-circle" style="color: #b7491d;;font-weight: 900;font-size: large;"></i> 
+     Hover on each column to find how many annotation each book contains.
+     </span>
+      </div>
+
+
+      <div class="col-sm-12 col-md-6">  
+        The bar chart shows the <span class="bold-style">10 most annotated authors </span>
+        <br>
+        <br>
+        <span style="font-size: smaller; font-weight: 900; color: #b7491d;">
+        <i class="bx bx-chevron-right-circle" style="color: #b7491d;;font-weight: 900;font-size: large;"></i> 
+        Hover on each column to find how many times each author has been annotated 
+        </span>
+      </div>
+    </div>
+
+
+
+  <div class="row" style="margin: 0%;">
+    <div class="col-sm-12 col-md-6">
+      <div class="flourish-embed flourish-chart" data-src="visualisation/16084011" >
+        <script src="https://public.flourish.studio/resources/embed.js"></script>
+      </div>
+      </div>
+
+
+      <div class="col-sm-12 col-md-6">  
+        <div class="flourish-embed flourish-chart" data-src="visualisation/16204387"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+      </div>
+    </div>
+    
+
+    <div class="row" style="margin: 0%;">
+      <div class="col-sm-12 col-md-9">
+        <div class="flourish-embed flourish-word-cloud" data-src="visualisation/16204689">
+          <script src="https://public.flourish.studio/resources/embed.js"></script></div>
+
+        </div>
+  
+  
+        <div class="col-sm-12 col-md-3">  
+         <p><span class="highlight">The word cloud </span>visually presents the <span class="bold-style">most frequently used words</span> in Gadda's annotations, extracted from Excel spreadsheets of word frequencies. This graphical representation offers an immediate and intuitive glimpse into the recurring themes, concepts, and emphases that characterize Gadda's annotations
+          <br>
+          <br>
+          <span style="font-size: smaller; font-weight: 900; color: #b7491d;">
+          <i class="bx bx-chevron-right-circle" style="color: #b7491d;;font-weight: 900;font-size: large;"></i> 
+         
+          Hover on the chart to see the number of occurances
+          </span>
+         </p>
+      </div>
+
+
+
+</section>
+   
+
+
+
+
+</main>
+<footer id="footer">
+
+   
+
+    <div class="container d-md-flex py-4">
+
+      <div class="me-md-auto text-center text-md-start">
+        <div class="copyright">
+          &copy; Copyright <strong><span>I Numeri di Gadda</span></strong>. All Rights Reserved
+        </div>
+        <div class="credits">
+          <!-- All the links in the footer should remain intact. -->
+          <!-- You can delete the links only if you purchased the pro version. -->
+          <!-- Licensing information: https://bootstrapmade.com/license/ -->
+          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/tempo-free-onepage-bootstrap-theme/ -->
+          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        </div>
+      </div>
+      <div class="social-links text-center text-md-right pt-3 pt-md-0">
+        <a href="#" class="github"><i class="bx bxl-github"></i></a>
+       
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/library.js"></script>
+
+
+   <!-- Template Observable  -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+  
+  <script type="module">
+
+  import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+  import define from "https://api.observablehq.com/d/a5f0ff8f114c2929@413.js?v=4";
+
+  const runtime = new Runtime();
+const main = runtime.module(define, name => {
+  if (name === "image") {
+    return new Inspector(document.querySelector("#observablehq-image-73bb894e"));
+  }
+});
+
+
+
+// Redefine the cell “width” to have a fixed value of 640; this masks the value
+// provided by the Observable standard library.
+main.redefine("width", 700);
+
+  
+  </script>
+
+
+
+  <script> 
+var speed = 20;
+
+// Create an Intersection Observer instance
+var observer = new IntersectionObserver(function(entries, observer) {
+    entries.forEach(function(entry) {
+        if (entry.isIntersecting) {
+            // Start the count animation when the element is in the viewport
+            incEltNbr("nbr");
+            observer.unobserve(entry.target); // Stop observing once triggered
+        }
+    });
+}, { threshold: 0.5 }); // Adjust threshold as needed
+
+// Observe the target element
+observer.observe(document.getElementById("nbr"));
+
+function incEltNbr(id) {
+  elt = document.getElementById(id);
+  endNbr = Number(elt.innerHTML);
+  incNbrRec(0, endNbr, elt);
+}
+
+function incNbrRec(i, endNbr, elt) {
+  if (i <= endNbr) {
+    elt.innerHTML = i;
+    setTimeout(function() {
+      incNbrRec(i + 26, endNbr, elt);
+    }, speed);
+  }
+}
+
+$(document).on('click', '.nav-menu a, .scrollto', function(e) {
+    // Your existing smooth scrolling code
+});
+
+$(document).ready(function() {
+    // Your existing smooth scrolling on page load with hash links in the URL
+    // ...
+
+    // Highlight the appropriate navigation item on page load
+    highlightNavOnScroll();
+});
+
+$(document).on('click', '.mobile-nav-toggle', function(e) {
+    // Your existing mobile navigation toggle code
+});
+
+$(document).click(function(e) {
+    // Your existing click outside mobile navigation code
+});
+
+$(window).on('scroll', function() {
+    // Your existing navigation active state on scroll code
+    highlightNavOnScroll();
+});
+
+// Function to highlight the navigation item based on scroll position
+function highlightNavOnScroll() {
+    var cur_pos = $(this).scrollTop() + 300;
+    var nav_sections = $('section');
+    var main_nav = $('.nav-menu, #mobile-nav');
+
+    nav_sections.each(function() {
+        var top = $(this).offset().top,
+            bottom = top + $(this).outerHeight();
+
+        if (cur_pos >= top && cur_pos <= bottom) {
+            if (cur_pos <= bottom) {
+                main_nav.find('li').removeClass('active');
+            }
+            main_nav.find('a[href="#' + $(this).attr('id') + '"]').parent('li').addClass('active');
+        }
+        if (cur_pos < 200) {
+            $(".nav-menu ul:first li:first").addClass('active');
+        }
+    });
+}
+
+
+  //Scroll data
+  am5.ready(function () {
+    // Create root element
+    var root = am5.Root.new("chartdiv");
+
+    
+
+    // Set themes
+    root.setThemes([
+      am5themes_Animated.new(root)
+    ]);
+
+    // Create chart
+    var chart = root.container.children.push(am5xy.XYChart.new(root, {
+      panX: true,
+      panY: true,
+      wheelX: "panX",
+      wheelY: "zoomX",
+      pinchZoomX: true,
+      paddingLeft: 0
+    }));
+
+    // Add cursor
+    var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {
+      behavior: "none"
+    }));
+    cursor.lineY.set("visible", false);
+
+// add scrollbar
+chart.set("scrollbarX", am5.Scrollbar.new(root, {
+  orientation: "horizontal"
+}));
+
+
+    
+    // Create axes
+    var xAxis = chart.xAxes.push(am5xy.DateAxis.new(root, {
+  maxDeviation: 0.5,
+  baseInterval: {
+    timeUnit: "year",
+    count: 1
+  },
+  renderer: am5xy.AxisRendererX.new(root, {
+    minGridDistance: 80,
+    minorGridEnabled: true,
+    pan: "zoom"
+  }),
+  tooltip: am5.Tooltip.new(root, {})
+}));
+
+var yAxis = chart.yAxes.push(am5xy.ValueAxis.new(root, {
+  maxDeviation: 1,
+  renderer: am5xy.AxisRendererY.new(root, {
+    pan: "zoom"
+  })
+}));
+    // Add series
+    var series = chart.series.push(am5xy.SmoothedXLineSeries.new(root, {
+  name: "Series",
+  xAxis: xAxis,
+  yAxis: yAxis,
+  valueYField: "value",
+  valueXField: "date",
+  tooltip: am5.Tooltip.new(root, {
+    labelText: "{valueY}"
+  })
+}));
+
+series.fills.template.setAll({
+  visible: true,
+  fillOpacity: 0.2,
+});
+
+series.bullets.push(function () {
+  return am5.Bullet.new(root, {
+    locationY: 0,
+    sprite: am5.Circle.new(root, {
+      radius: 4,
+      stroke: root.interfaceColors.get("background"),
+      fill: series.get("fill")
+    })
+  });
+});
+
+
+
+//COLORI
+series.set("fill", am5.color("#b7491d")); // set Series color to red
+series.set("stroke", am5.color("#b5291d")); // set Series color to red
+series.set("labelText", am5.color("#b5291d")); // set Series color to red
+
+
+
+
+
+    // Your provided JSON data
+    var jsonDataYear = {
+      "editions": [
+  {
+    "Year": 1453,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1571,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1573,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1581,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1600,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1618,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1637,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1700,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1731,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1745,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1752,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1758,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1763,
+    "Number of Books": 2
+  },
+  {
+    "Year": 1778,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1786,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1790,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1797,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1807,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1809,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1813,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1814,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1818,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1819,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1820,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1821,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1822,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1823,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1825,
+    "Number of Books": 3
+  },
+  {
+    "Year": 1826,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1828,
+    "Number of Books": 3
+  },
+  {
+    "Year": 1829,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1830,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1831,
+    "Number of Books": 5
+  },
+  {
+    "Year": 1832,
+    "Number of Books": 2
+  },
+  {
+    "Year": 1833,
+    "Number of Books": 3
+  },
+  {
+    "Year": 1835,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1836,
+    "Number of Books": 2
+  },
+  {
+    "Year": 1837,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1838,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1839,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1840,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1841,
+    "Number of Books": 2
+  },
+  {
+    "Year": 1842,
+    "Number of Books": 3
+  },
+  {
+    "Year": 1843,
+    "Number of Books": 4
+  },
+  {
+    "Year": 1844,
+    "Number of Books": 6
+  },
+  {
+    "Year": 1845,
+    "Number of Books": 3
+  },
+  {
+    "Year": 1846,
+    "Number of Books": 2
+  },
+  {
+    "Year": 1847,
+    "Number of Books": 2
+  },
+  {
+    "Year": 1850,
+    "Number of Books": 4
+  },
+  {
+    "Year": 1851,
+    "Number of Books": 2
+  },
+  {
+    "Year": 1853,
+    "Number of Books": 7
+  },
+  {
+    "Year": 1854,
+    "Number of Books": 4
+  },
+  {
+    "Year": 1855,
+    "Number of Books": 3
+  },
+  {
+    "Year": 1856,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1857,
+    "Number of Books": 3
+  },
+  {
+    "Year": 1858,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1859,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1860,
+    "Number of Books": 2
+  },
+  {
+    "Year": 1861,
+    "Number of Books": 2
+  },
+  {
+    "Year": 1862,
+    "Number of Books": 2
+  },
+  {
+    "Year": 1863,
+    "Number of Books": 2
+  },
+  {
+    "Year": 1864,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1865,
+    "Number of Books": 2
+  },
+  {
+    "Year": 1866,
+    "Number of Books": 3
+  },
+  {
+    "Year": 1867,
+    "Number of Books": 3
+  },
+  {
+    "Year": 1868,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1869,
+    "Number of Books": 2
+  },
+  {
+    "Year": 1870,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1871,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1872,
+    "Number of Books": 2
+  },
+  {
+    "Year": 1873,
+    "Number of Books": 2
+  },
+  {
+    "Year": 1874,
+    "Number of Books": 3
+  },
+  {
+    "Year": 1875,
+    "Number of Books": 4
+  },
+  {
+    "Year": 1876,
+    "Number of Books": 4
+  },
+  {
+    "Year": 1877,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1878,
+    "Number of Books": 6
+  },
+  {
+    "Year": 1879,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1880,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1881,
+    "Number of Books": 5
+  },
+  {
+    "Year": 1882,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1883,
+    "Number of Books": 7
+  },
+  {
+    "Year": 1884,
+    "Number of Books": 3
+  },
+  {
+    "Year": 1885,
+    "Number of Books": 5
+  },
+  {
+    "Year": 1886,
+    "Number of Books": 7
+  },
+  {
+    "Year": 1887,
+    "Number of Books": 4
+  },
+  {
+    "Year": 1888,
+    "Number of Books": 3
+  },
+  {
+    "Year": 1889,
+    "Number of Books": 3
+  },
+  {
+    "Year": 1890,
+    "Number of Books": 5
+  },
+  {
+    "Year": 1891,
+    "Number of Books": 4
+  },
+  {
+    "Year": 1892,
+    "Number of Books": 3
+  },
+  {
+    "Year": 1893,
+    "Number of Books": 7
+  },
+  {
+    "Year": 1894,
+    "Number of Books": 1
+  },
+  {
+    "Year": 1895,
+    "Number of Books": 6
+  },
+  {
+    "Year": 1896,
+    "Number of Books": 7
+  },
+  {
+    "Year": 1897,
+    "Number of Books": 5
+  },
+  {
+    "Year": 1898,
+    "Number of Books": 3
+  },
+  {
+    "Year": 1899,
+    "Number of Books": 4
+  },
+  {
+    "Year": 1900,
+    "Number of Books": 4
+  },
+  {
+    "Year": 1901,
+    "Number of Books": 11
+  },
+  {
+    "Year": 1902,
+    "Number of Books": 7
+  },
+  {
+    "Year": 1903,
+    "Number of Books": 10
+  },
+  {
+    "Year": 1904,
+    "Number of Books": 4
+  },
+  {
+    "Year": 1905,
+    "Number of Books": 15
+  },
+  {
+    "Year": 1906,
+    "Number of Books": 7
+  },
+  {
+    "Year": 1907,
+    "Number of Books": 12
+  },
+  {
+    "Year": 1908,
+    "Number of Books": 19
+  },
+  {
+    "Year": 1909,
+    "Number of Books": 11
+  },
+  {
+    "Year": 1910,
+    "Number of Books": 18
+  },
+  {
+    "Year": 1911,
+    "Number of Books": 14
+  },
+  {
+    "Year": 1912,
+    "Number of Books": 28
+  },
+  {
+    "Year": 1913,
+    "Number of Books": 30
+  },
+  {
+    "Year": 1914,
+    "Number of Books": 27
+  },
+  {
+    "Year": 1915,
+    "Number of Books": 32
+  },
+  {
+    "Year": 1916,
+    "Number of Books": 23
+  },
+  {
+    "Year": 1917,
+    "Number of Books": 15
+  },
+  {
+    "Year": 1918,
+    "Number of Books": 9
+  },
+  {
+    "Year": 1919,
+    "Number of Books": 30
+  },
+  {
+    "Year": 1920,
+    "Number of Books": 37
+  },
+  {
+    "Year": 1921,
+    "Number of Books": 18
+  },
+  {
+    "Year": 1922,
+    "Number of Books": 27
+  },
+  {
+    "Year": 1923,
+    "Number of Books": 28
+  },
+  {
+    "Year": 1924,
+    "Number of Books": 31
+  },
+  {
+    "Year": 1925,
+    "Number of Books": 31
+  },
+  {
+    "Year": 1926,
+    "Number of Books": 29
+  },
+  {
+    "Year": 1927,
+    "Number of Books": 29
+  },
+  {
+    "Year": 1928,
+    "Number of Books": 31
+  },
+  {
+    "Year": 1929,
+    "Number of Books": 42
+  },
+  {
+    "Year": 1930,
+    "Number of Books": 47
+  },
+  {
+    "Year": 1931,
+    "Number of Books": 41
+  },
+  {
+    "Year": 1932,
+    "Number of Books": 42
+  },
+  {
+    "Year": 1933,
+    "Number of Books": 39
+  },
+  {
+    "Year": 1934,
+    "Number of Books": 44
+  },
+  {
+    "Year": 1935,
+    "Number of Books": 29
+  },
+  {
+    "Year": 1936,
+    "Number of Books": 26
+  },
+  {
+    "Year": 1937,
+    "Number of Books": 32
+  },
+  {
+    "Year": 1938,
+    "Number of Books": 63
+  },
+  {
+    "Year": 1939,
+    "Number of Books": 65
+  },
+  {
+    "Year": 1940,
+    "Number of Books": 54
+  },
+  {
+    "Year": 1941,
+    "Number of Books": 84
+  },
+  {
+    "Year": 1942,
+    "Number of Books": 115
+  },
+  {
+    "Year": 1943,
+    "Number of Books": 63
+  },
+  {
+    "Year": 1944,
+    "Number of Books": 40
+  },
+  {
+    "Year": 1945,
+    "Number of Books": 53
+  },
+  {
+    "Year": 1946,
+    "Number of Books": 52
+  },
+  {
+    "Year": 1947,
+    "Number of Books": 28
+  },
+  {
+    "Year": 1948,
+    "Number of Books": 34
+  },
+  {
+    "Year": 1949,
+    "Number of Books": 50
+  },
+  {
+    "Year": 1950,
+    "Number of Books": 66
+  },
+  {
+    "Year": 1951,
+    "Number of Books": 69
+  },
+  {
+    "Year": 1952,
+    "Number of Books": 78
+  },
+  {
+    "Year": 1953,
+    "Number of Books": 58
+  },
+  {
+    "Year": 1954,
+    "Number of Books": 51
+  },
+  {
+    "Year": 1955,
+    "Number of Books": 43
+  },
+  {
+    "Year": 1956,
+    "Number of Books": 30
+  },
+  {
+    "Year": 1957,
+    "Number of Books": 29
+  },
+  {
+    "Year": 1958,
+    "Number of Books": 27
+  },
+  {
+    "Year": 1959,
+    "Number of Books": 30
+  },
+  {
+    "Year": 1960,
+    "Number of Books": 50
+  },
+  {
+    "Year": 1961,
+    "Number of Books": 35
+  },
+  {
+    "Year": 1962,
+    "Number of Books": 35
+  },
+  {
+    "Year": 1963,
+    "Number of Books": 25
+  },
+  {
+    "Year": 1964,
+    "Number of Books": 44
+  },
+  {
+    "Year": 1965,
+    "Number of Books": 51
+  },
+  {
+    "Year": 1966,
+    "Number of Books": 48
+  },
+  {
+    "Year": 1967,
+    "Number of Books": 30
+  },
+  {
+    "Year": 1968,
+    "Number of Books": 51
+  },
+  {
+    "Year": 1969,
+    "Number of Books": 27
+  },
+  {
+    "Year": 1970,
+    "Number of Books": 34
+  },
+  {
+    "Year": 1971,
+    "Number of Books": 27
+  },
+  {
+    "Year": 1972,
+    "Number of Books": 24
+  },
+  {
+    "Year": 1973,
+    "Number of Books": 13
+  },
+  {
+    "Year": "s.d",
+    "Number of Books": 3
+  },
+  {
+    "Year": "s.d.",
+    "Number of Books": 147
+  }
+]
+    };
+
+    // Convert JSON data to the required format
+    var data = jsonDataYear.editions.map(entry => ({
+      date: new Date(entry.Year, 0, 1).getTime(),
+      value: entry["Number of Books"]
+    }));
+
+    // Set data for both main series and scrollbar series
+    series.data.setAll(data);
+    sbSeries.data.setAll(data);
+
+    // Make stuff animate on load
+  });
+
+
+//Bullet barchart
+  am5.ready(function() {
+
+// Create root element
+// https://www.amcharts.com/docs/v5/getting-started/#Root_element
+var root = am5.Root.new("chartdiv1");
+
+// Set themes
+// https://www.amcharts.com/docs/v5/concepts/themes/
+root.setThemes([
+  am5themes_Animated.new(root)
+]);
+
+var data = [
+  {
+    name: "Carlo Emilio Gadda ",
+    steps: 49,
+    pictureSettings: {
+      src: "http://www.sba.unisi.it/wp-content/uploads/2014/11/GADDA-214x300.jpg"
+    }
+  },
+  {
+    name: "Giosuè Carducci",
+    steps: 21,
+    pictureSettings: {
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Giosu%C3%A8_Carducci2.jpg/337px-Giosu%C3%A8_Carducci2.jpg "
+  }
+},
+  {
+    name: "Riccardo Bacchelli",
+    steps: 20,
+    pictureSettings: {
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Riccardo_Bacchelli_1950s.jpg/330px-Riccardo_Bacchelli_1950s.jpg" }
+  },
+  {
+    name: "Dante Alighieri",
+    steps: 19,
+    pictureSettings: {
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Portrait_de_Dante.jpg/330px-Portrait_de_Dante.jpg"
+    }
+  },
+  {
+    name: "Alessandro Manzoni",
+    steps: 19,
+    pictureSettings: {
+      src:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Francesco_Hayez_-_Ritratto_di_Alessandro_Manzoni.jpg/330px-Francesco_Hayez_-_Ritratto_di_Alessandro_Manzoni.jpg"  }
+  },
+  {
+    name: "William Shakespeare",
+    steps: 19,
+    pictureSettings: {
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/William_Shakespeare_by_John_Taylor.jpg/330px-William_Shakespeare_by_John_Taylor.jpg"  }
+  },
+  {
+    name: "Tullio Marco Cicerone",
+    steps: 17,
+    pictureSettings: {
+      src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Bust_of_Cicero_%281st-cent._BC%29_-_Palazzo_Nuovo_-_Musei_Capitolini_-_Rome_2016.jpg/330px-Bust_of_Cicero_%281st-cent._BC%29_-_Palazzo_Nuovo_-_Musei_Capitolini_-_Rome_2016.jpg"
+    }
+  },
+];
+
+// Create chart
+// https://www.amcharts.com/docs/v5/charts/xy-chart/
+var chart = root.container.children.push(
+  am5xy.XYChart.new(root, {
+    panX: false,
+    panY: false,
+    paddingLeft:0,
+    paddingRight:30,
+    wheelX: "none",
+    wheelY: "none"
+  })
+);
+
+// Create axes
+// https://www.amcharts.com/docs/v5/charts/xy-chart/axes/
+
+var yRenderer = am5xy.AxisRendererY.new(root, {
+  minorGridEnabled:true
+});
+yRenderer.grid.template.set("visible", false);
+
+var yAxis = chart.yAxes.push(
+  am5xy.CategoryAxis.new(root, {
+    categoryField: "name",
+    renderer: yRenderer,
+    paddingRight:40
+  })
+);
+
+var xRenderer = am5xy.AxisRendererX.new(root, {
+  minGridDistance:80,
+  minorGridEnabled:true
+});
+
+var xAxis = chart.xAxes.push(
+  am5xy.ValueAxis.new(root, {
+    min: 0,
+    renderer: xRenderer
+  })
+);
+
+// Add series
+// https://www.amcharts.com/docs/v5/charts/xy-chart/series/
+var series = chart.series.push(
+  am5xy.ColumnSeries.new(root, {
+    name: "Income",
+    xAxis: xAxis,
+    yAxis: yAxis,
+    valueXField: "steps",
+    categoryYField: "name",
+    sequencedInterpolation: true,
+    calculateAggregates: true,
+    maskBullets: false,
+    tooltip: am5.Tooltip.new(root, {
+      dy: -30,
+      pointerOrientation: "vertical",
+      labelText: "{valueX}"
+    })
+  })
+);
+
+series.columns.template.setAll({
+  strokeOpacity: 0,
+  cornerRadiusBR: 10,
+  cornerRadiusTR: 10,
+  cornerRadiusBL: 10,
+  cornerRadiusTL: 10,
+  maxHeight: 50,
+  fillOpacity: 0.8
+});
+
+var currentlyHovered;
+
+series.columns.template.events.on("pointerover", function(e) {
+  handleHover(e.target.dataItem);
+});
+
+series.columns.template.events.on("pointerout", function(e) {
+  handleOut();
+});
+
+function handleHover(dataItem) {
+  if (dataItem && currentlyHovered != dataItem) {
+    handleOut();
+    currentlyHovered = dataItem;
+    var bullet = dataItem.bullets[0];
+    bullet.animate({
+      key: "locationX",
+      to: 1,
+      duration: 600,
+      easing: am5.ease.out(am5.ease.cubic)
+    });
+  }
+}
+
+function handleOut() {
+  if (currentlyHovered) {
+    var bullet = currentlyHovered.bullets[0];
+    bullet.animate({
+      key: "locationX",
+      to: 0,
+      duration: 600,
+      easing: am5.ease.out(am5.ease.cubic)
+    });
+  }
+}
+
+
+var circleTemplate = am5.Template.new({});
+
+series.bullets.push(function(root, series, dataItem) {
+  var bulletContainer = am5.Container.new(root, {});
+  var circle = bulletContainer.children.push(
+    am5.Circle.new(
+      root,
+      {
+        radius: 34
+      },
+      circleTemplate
+    )
+  );
+
+  var maskCircle = bulletContainer.children.push(
+    am5.Circle.new(root, { radius: 27 })
+  );
+
+  // only containers can be masked, so we add image to another container
+  var imageContainer = bulletContainer.children.push(
+    am5.Container.new(root, {
+      mask: maskCircle
+    })
+  );
+
+  // not working
+  var image = imageContainer.children.push(
+    am5.Picture.new(root, {
+      templateField: "pictureSettings",
+      centerX: am5.p50,
+      centerY: am5.p50,
+      width: 60,
+      height: 60
+    })
+  );
+
+  return am5.Bullet.new(root, {
+    locationX: 0,
+    sprite: bulletContainer
+  });
+});
+
+// heatrule
+series.set("heatRules", [
+  {
+    dataField: "valueX",
+    min: am5.color(0xb7491d),
+    max: am5.color(0x6d2b11),
+    target: series.columns.template,
+    key: "fill"
+  },
+  {
+    dataField: "valueX",
+    min: am5.color(0xb7491d),
+    max: am5.color(0x6d2b11),
+    target: circleTemplate,
+    key: "fill"
+  }
+]);
+
+series.data.setAll(data);
+yAxis.data.setAll(data);
+
+var cursor = chart.set("cursor", am5xy.XYCursor.new(root, {}));
+cursor.lineX.set("visible", false);
+cursor.lineY.set("visible", false);
+
+cursor.events.on("cursormoved", function() {
+  var dataItem = series.get("tooltip").dataItem;
+  if (dataItem) {
+    handleHover(dataItem)
+  }
+  else {
+    handleOut();
+  }
+})
+
+
+
+}); // end am5.ready()
+
+
+
+
+ </script>
+
+
+
+</script>
+</script>
+</body>
+
+</html>
