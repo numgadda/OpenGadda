@@ -43146,26 +43146,40 @@ createFilterButtons(uniqueArchivioValues, archivioCount);
 
 // Function to create a clickable link for the library values
 function createClickableLink(value) {
-    return `<a href="#" class="library-link">${value}</a>`;
-  }
+  return `<a href="#" class="library-link">${value}</a>`;
+}
 
+// Declaration of filtered data object to store filtered data sets with unique IDs
+const filteredDataObject = {};
+
+// Function to handle the click event and redirect to another page
 $('#jsonTable').on('click', '.library-link', function (e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    const libraryValue = $(this).text();
-    const filteredData = secondaryJSONData.filter(item => item.Category === libraryValue);
+  const libraryValue = $(this).text();
+  const filteredData = secondaryJSONData.filter(item => item.Category === libraryValue);
 
-    if (filteredData.length > 0) {
-      // Construct the URL with filtered data as parameters
-      const filteredDataURL = `anotherpage.html?libraryValue=${encodeURIComponent(libraryValue)}&filteredData=${encodeURIComponent(JSON.stringify(filteredData))}`;
-      
-      // Redirect to another page with the filtered data in the URL
-      window.location.href = filteredDataURL;
-    } else {
-      // Handle if no matching data found
-      alert('No matching data found.');
-    }
-  });
+  if (filteredData.length > 0) {
+    // Generate a unique ID (timestamp) to identify the filtered data
+    const uniqueID = Date.now().toString();
+
+    // Store the filtered data in the object using the unique ID as the key
+    filteredDataObject[uniqueID] = filteredData;
+
+    // Store filteredDataObject in localStorage
+    localStorage.setItem('filteredDataObject', JSON.stringify(filteredDataObject));
+
+    // Construct the URL with only the unique ID
+    const filteredDataURL = `anotherpage.html?filteredDataID=${encodeURIComponent(uniqueID)}`;
+
+    // Redirect to another page with the unique ID in the URL
+    window.location.href = filteredDataURL;
+  } else {
+    // Handle if no matching data found
+    alert('No matching data found.');
+  }
+});
+
 
 
 
