@@ -43263,17 +43263,23 @@ const uniqueLibraries = libraries ? [...new Set(libraries.map(library => library
 
 let clickableData = modifiedData;
 
-// Create a map for library values and their respective clickable links
-const libraryLinks = {};
 
+const MAX_LENGTH = 10; // Define the maximum length for the displayed library names
+
+// ...
+
+// Replace library values with clickable links (truncated names)
 uniqueLibraries.forEach((library) => {
   const libValues = library.split(',').map(val => val.trim());
+  let replacedValues = '';
   libValues.forEach((libValue) => {
-    if (!libraryLinks[libValue]) {
-      libraryLinks[libValue] = createClickableLink(libValue);
-    }
+    const truncatedName = libValue.length > MAX_LENGTH ? libValue.substring(0, MAX_LENGTH) + '...' : libValue;
+    replacedValues += libraryLinks[libValue] + ' (' + truncatedName + '), '; // Add clickable link with truncated name
   });
+  replacedValues = replacedValues.slice(0, -2); // Remove the trailing comma and space
+  clickableData = clickableData.replace(new RegExp(`library: (${library.replace(/[-/\\^$*+?.()|[\]{}]/g, '\\$&')})`, 'g'), replacedValues);
 });
+
 
 // Replace library values with clickable links
 uniqueLibraries.forEach((library) => {
