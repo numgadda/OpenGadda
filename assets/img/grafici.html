@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Map with Bubbles</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 600px;
+            width: 800px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <div id="map2"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+       // Inside the JavaScript section where the map is initialized
+// Adjust the zoom level in the map initialization
+var map = L.map('map').setView([41.9028, 12.4964], 12); // Adjust the zoom level (here, 12) as needed
+
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 18,
+}).addTo(map);
+
+
+        // Your city data (replace this with your data)
+        var cities = [
+            {
+                name: 'Milano',
+                value: 886,
+                coordinates: [45.4642, 9.19]
+            },
+            {
+                name: 'Roma',
+                value: 12,
+                coordinates: [41.9028, 12.4964]
+            },
+            {
+                name: 'Firenze',
+                value: 49,
+                coordinates: [43.7696, 11.2558]
+            },
+            {
+                name: 'Pavia',
+                value: 51,
+                coordinates: [45.1847, 9.158]
+            },
+            {
+                name: 'Villafranca di Verona',
+                value: 585,
+                coordinates: [45.3997, 10.8688]
+            }
+            // Add more cities as needed
+        ];
+
+        cities.forEach(function(city) {
+            var marker = L.circleMarker(city.coordinates, {
+                radius: Math.sqrt(city.value) * 3, // Adjust the bubble size based on the value
+                fillColor: '#b7491d',
+                fillOpacity: 0.5,
+                stroke: false
+            }).bindPopup(city.name + '<br>Value: ' + city.value).addTo(map);
+        });
+    </script>
+    </body>
+    </html>

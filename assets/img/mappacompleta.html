@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>map2 with Bubbles</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map2 {
+            height: 600px;
+            width: 800px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map2"></div>
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        var map2 = L.map('map2').setView([41.9028, 12.4964], 6); // Set initial view to Italy
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 18,
+        }).addTo(map2);
+
+      // Your city data (replace this with your data)
+      var cities = [
+            {
+                name: 'Celle',
+                value: 4,
+                coordinates: [44.3977, 8.9936]
+            },
+            {
+                name: 'Milano',
+                value: 100,
+                coordinates: [45.4642, 9.19]
+            },
+            {
+                name: 'Roma',
+                value: 101,
+                coordinates: [41.9028, 12.4964]
+            },
+            {
+                name: 'Genova',
+                value: 7,
+                coordinates: [44.4056, 8.9463]
+            },
+            {
+                name: 'Buenos Aires',
+                value: 11,
+                coordinates: [-34.6037, -58.3816]
+            },
+            {
+                name: 'Firenze',
+                value: 35,
+                coordinates: [43.7696, 11.2558]
+            },
+            {
+                name: 'Siena',
+                value: 1,
+                coordinates: [43.3186, 11.3307]
+            },
+            {
+                name: 'Venezia',
+                value: 11,
+                coordinates: [45.4408, 12.3155]
+            },
+            {
+                name: 'Parma',
+                value: 2,
+                coordinates: [44.8015, 10.3279]
+            },
+            {
+                name: 'Capri',
+                value: 1,
+                coordinates: [40.5532, 14.2222]
+            },
+            {
+                name: 'Bergamo',
+                value: 9,
+                coordinates: [45.6983, 9.6773]
+            },
+            {
+                name: 'Chianti',
+                value: 1,
+                coordinates: [43.4971, 11.2519]
+            },
+            {
+                name: 'Isola di Rodi',
+                value: 1,
+                coordinates: [36.4031, 28.1387]
+            },
+            {
+                name: 'Zara',
+                value: 1,
+                coordinates: [43.5081, 16.4402]
+            },
+            {
+                name: 'Tripoli',
+                value: 4,
+                coordinates: [32.8872, 13.1913]
+            },
+          
+            {
+                name: 'Longone',
+                value: 16,
+                coordinates: [42.7215, 10.3769]
+            },
+            {
+                name: 'Stresa',
+                value: 1,
+                coordinates: [45.8833, 8.5333]
+            },
+            {
+                name: 'Cavalcaselle',
+                value: 1,
+                coordinates: [45.4383, 10.9872]
+            },
+            {
+                name: 'Sirmione',
+                value: 1,
+                coordinates: [45.4852, 10.6059]
+            },
+            {
+                name: 'S.ta Margherita Ligure',
+                value: 2,
+                coordinates: [44.3313, 9.2115]
+            },
+            {
+                name: 'Cortina d’Ampezzo',
+                value: 1,
+                coordinates: [46.5361, 12.1357]
+            },
+            {
+                name: 'Pocol',
+                value: 1,
+                coordinates: [46.5124, 12.0945]
+            }
+            // Add more cities as needed
+        ];
+
+
+        cities.forEach(function(city) {
+            var marker = L.circleMarker(city.coordinates, {
+                radius: Math.sqrt(city.value) * 3, // Adjust the bubble size based on the value
+                fillColor: '#b7491d',
+                fillOpacity: 0.5,
+                stroke: false
+            }).bindPopup(city.name + '<br>Value: ' + city.value).addTo(map2);
+        });
+    </script>
+</body>
+</html>
