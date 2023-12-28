@@ -1675,39 +1675,221 @@ html, body {
       position: relative;
 
     }
+ /* CSS styles for the layout */
+ .wrapper {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+  }
 
-        /* CSS styles for the sidebar */
-        .sidebara {
-          width: 250px;
-          height: 100%;
-          position: fixed;
-          top: 0;
-          left: 0;
-          background-color: #f0f0f0;
-          padding: 20px;
-        }
-    
-        .sidebara h2 {
-          margin-bottom: 10px;
-        }
-    
-        .sidebara ul {
-          list-style: none;
-          padding: 0;
-          margin: 0;
-        }
-    
-        .sidebara li {
-          margin-bottom: 10px;
-        }
-    
-        /* Other styles for the content */
-        .maincontent {
-          margin-left: 250px; /* Adjust this to match the width of the sidebar */
-          padding: 20px;
-        }
-    
-        #titling {
-            margin-left: 20px;
-            margin-top: 20px;
-        }
+  #sidebar {
+    min-width: 300px; /* Adjust the width of the sidebar */
+    max-width: 383px;
+    background: #f7f2df;
+    color: #b7491d;
+    transition: all 0.3s;
+    position: sticky;
+    top: 65px;
+    height: 100vh;
+    overflow-y: auto;
+    padding-right: 20px;
+  }
+
+  #sidebar .sidebar-header {
+    padding: 20px;
+    background: #b7491d;
+    color: #f7f2df;
+  }
+
+  #main {
+    width: calc(100% - 300px); /* Adjust the width of the main content */
+    padding: 20px;
+    min-height: 100vh;
+    transition: all 0.3s;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  #sidebar-content {
+    padding-left: 10px;
+  }
+
+  #main .list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
+  #main .list li {
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    padding: 15px; /* Adjust padding for list items */
+    width: 100%;
+  }
+
+    /* CSS styles for the layout */
+    .wrapper {
+        display: flex;
+        width: 100%;
+        align-items: flex-start;
+      }
+  
+      #sidebar {
+        min-width: 300px; /* Adjust the width of the sidebar */
+        max-width: 450px;
+        background: #f7f2df;
+        color: #b7491d;
+        transition: all 0.3s;
+        position: sticky;
+        top: 65px;
+        height: 100vh;
+        overflow-y: auto;
+        padding-right: 20px;
+      }
+  
+      #sidebar .sidebar-header {
+        padding: 20px;
+        background: #b7491d;
+        color: #f7f2df;
+      }
+  
+      #main {
+        width: calc(100% - 300px); /* Adjust the width of the main content */
+        padding: 20px;
+        min-height: 100vh;
+        transition: all 0.3s;
+        overflow-y: auto;
+        display: flex;
+        flex-direction: column;
+      }
+  
+      .search-heading {
+        display: flex;
+        flex-direction: column;
+      }
+  
+      .search-container {
+        display: flex;
+      }
+  
+      #main .list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        width: 100%;
+      }
+  
+      #main .list li {
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        padding: 15px; /* Adjust padding for list items */
+        width: 100%;
+      }
+
+     
+      .pagination {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        padding: 0;
+      }
+      
+      .pagination button {
+        /* Your button styles here */
+        margin: 0 5px; /* Adjust margin between pagination buttons */
+      }
+       /* Style for sidebar content */
+    #sidebar-content {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Style for filter buttons */
+    .filter-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+    }
+
+    .filter-buttons button {
+      font-family: "Nunito", sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: #b7491d ;
+      border: 2px solid #b7491d ;
+      background-color:transparent;
+      margin-right: 5px;
+      padding: 5px 10px;
+      border-radius: 50px;
+      display: flex;
+      float: left;
+      cursor: pointer;
+      margin-top:20px;
+    }
+
+    .filter-buttons button:hover {
+ 
+        background: #b7491d;
+        color: #f7f2df;
+
+    }
+
+/* Updated styles for "Show Non-Null Segni" button */
+#showNonNullSegniButton {
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 14px; /* Reduced font size */
+  color: #b7491d;
+  border: 2px solid #b7491d;
+  background-color: transparent;
+  margin-right: 5px;
+  padding: 3px 8px; /* Adjusted padding to make the button smaller */
+  border-radius: 20px; /* Reduced border-radius */
+  display: flex;
+  justify-content: center; /* Aligns content horizontally */
+  align-items: center; /* Aligns content vertically */
+  cursor: pointer;
+  margin-top: 10px;
+  width: fit-content; /* Adjust width as needed */
+  height: fit-content; /* Adjust height as needed */
+}
+
+
+
+
+
+    #showNonNullSegniButton:hover {
+      background: #b7491d;
+        color: #f7f2df;
+
+    }
+
+    /* Style for sort buttons */
+    .sort-buttons {
+      display: flex;
+    }
+
+    .sort-buttons button {
+      font-family: "Nunito", sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: #b7491d ;
+      border: 2px solid #b7491d ;
+      background-color:transparent;
+      margin-right: 5px;
+      padding: 5px 10px;
+      border-radius: 50px;
+      display: flex;
+      float: left;
+      cursor: pointer;
+      margin-top:20px;
+    }
+
+    .sort-buttons button:hover {
+      background: #b7491d;
+        color: #f7f2df;
+
+    }

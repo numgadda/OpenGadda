@@ -385,7 +385,7 @@ h6 {
 #hero {
   width: 100%;
   height: 50vh;
-  background: url("https://www.adelphi.it/spool/cover_9788845933066__id8017_w1200_t1540375120.jpg") bottom center;
+  background: url("https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1657546771i/596986.jpg") bottom center;
   background-size: cover;
   position: relative;
 }
@@ -1068,7 +1068,6 @@ section {
 .checkbox-label {
   margin-right: 10px;
 }
-#map { height: 400px; }
 
 .tooltip-icon {
   cursor: pointer;
@@ -1711,3 +1710,161 @@ html, body {
             margin-left: 20px;
             margin-top: 20px;
         }
+        .map-container {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin-bottom: 50px; /* Adjust margin as needed */
+        }
+        
+        .written-part,
+        .map {
+          flex: 1;
+          display: flex;
+          flex-direction: column;
+          padding: 20px;
+          overflow: hidden; /* Add this line to prevent scrolling */
+        }
+        
+        .map iframe,
+        .written-part {
+          flex: 1;
+        }
+        
+        @media (max-width: 768px) {
+          .map-container {
+            flex-direction: column;
+          }
+        
+          .written-part,
+          .map {
+            width: 100%;
+          }
+        }
+        .map {
+          overflow-x: hidden; /* Prevent horizontal scrolling */
+        }
+        .center {
+          margin-top:10px;
+          text-align: center;
+          color: #b7491d;
+        }
+        .center {
+          margin-top:10px;
+          text-align: center;
+          color: #b7491d;
+        }
+         /* Change accordion header color */
+  .accordion-button {
+    background-color: #f7f2df;/* Change to your desired color */
+    color: #b7491d; 
+  }
+
+  /* Change accordion header color when expanded */
+  .accordion-button:not(.collapsed) {
+    background-color: #f7f2df; /* Change to your desired color */
+    color: #b7491d; /* Change to your desired text color */
+  }
+
+  /* Change accordion body background color */
+  .accordion-body {
+    background-color: #f7f2df; /* Change to your desired color */
+  }
+        
+        
+        
+    
+  .element-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .element {
+    width: 50%;
+    box-sizing: border-box;
+    padding: 10px;
+  }
+  .bigger-element {
+    display: flex;
+  }
+  
+  .bigger-element .element {
+    flex: 1;
+  }
+  
+ 
+  
+  .written-part p {
+    margin-bottom: 15px; /* Adjust the value to set the desired space */
+  }
+
+.containergeo {
+  margin-top:20px;
+    margin-bottom: 50px; 
+    border: 2px solid #b7491d;
+    padding:10px;
+    border-radius: 10px;
+
+    /* Adjust the value to set the desired space */
+  }
+  .custom-list {
+    list-style-position: inside; /* Place the bullet inside the padding */
+    padding-left: 20px; /* Adjust the space between bullet point and text */
+  }
+  .element-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust the gap between elements as needed */
+  }
+
+  .bigger-element {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  .element {
+    flex: 1 1 calc(50% - 10px); /* Adjust the width as needed */
+  }
+
+  @media (max-width: 768px) {
+    .element {
+      flex: 1 1 100%;
+    }
+  }
+/* Style for the container of each element */
+.element-container {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px; /* Adjust margin as needed */
+  width: 100%; /* Ensure the container takes the full width */
+}
+
+/* Style for the graph element */
+.element {
+  width: 100%; /* Ensure the graph takes the full width */
+  height: auto; /* Maintain aspect ratio and adjust height accordingly */
+  max-width: 100%; /* Ensure the graph doesn't exceed its container's width */
+}
+/* CSS for arranging Sankey graphs side by side */
+.sankey-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Adjust the gap between the graphs as needed */
+}
+
+.sankey-container .element {
+  flex: 1 1 calc(50% - 10px); /* Adjust the width as needed */
+  max-width: calc(50% - 10px); /* Adjust the max-width as needed */
+}
+
+.sankey-container .element:first-child,
+.sankey-container .element:last-child {
+  margin-bottom: 0; /* Remove margin-bottom for first and last elements */
+}
+
+
+
+
+
