@@ -1712,19 +1712,25 @@ html, body {
             margin-top: 20px;
         }
 
-        #buttonexcel{
-          display: block; /* Display as block-level elements */
-          height: 60px; /* Adjust button height */
-          padding: 8px 16px; /* Add padding */
-          margin: 10px auto; 
-          margin-top:15px;
-          margin-left:20px;/* Center the buttons horizontally and add margin between them */
-          width: auto; /* Adjust width based on content */
-          border: 1px solid #b7491d; /* Add a thinner border */
-          background-color: transparent; /* Set a transparent background */
-          color: #b7491d; /* Set a softer text color */
-          font-size: 14px; /* Adjust font size */
-          border-radius: 8px; /* Add a slight border radius */
-          cursor: pointer; /* Change cursor to pointer on hover */
-          transition: color 0.3s, border-color 0.3s; /* Add transition effect for color and border */
+        #buttonexcel {
+          display: block;
+          height: 60px;
+          padding: 8px 16px;
+          margin: 10px auto;
+          margin-top: 15px;
+          margin-left: 20px;
+          width: auto;
+          border: 1px solid #b7491d;
+          background-color: transparent;
+          color: #b7491d;
+          font-size: 14px;
+          border-radius: 8px;
+          cursor: pointer;
+          transition: color 0.3s, border-color 0.3s;
         }
+        
+        #buttonexcel img {
+          vertical-align: middle;
+          margin-right: 5px;
+        }
+          
