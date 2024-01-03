@@ -1712,24 +1712,5 @@ html, body {
             margin-top: 20px;
         }
 
-        #buttonexcel {
-          display: inline-block;
-          height: 60px;
-          padding: 10px 20px;
-          margin: 10px;
-          width: auto; /* Adjust the width based on content */
-          border: 1px solid #b7491d;
-          background-color: transparent;
-          color: #b7491d;
-          font-size: 14px;
-          border-radius: 8px;
-          cursor: pointer;
-          transition: color 0.3s, border-color 0.3s;
-        }
-        
-        #buttonexcel img {
-          vertical-align: middle;
-          margin-right: 5px;
-        }
-        
+     
           
