@@ -1713,13 +1713,11 @@ html, body {
         }
 
         #buttonexcel {
-          display: block;
+          display: inline-block;
           height: 60px;
           padding: 8px 16px;
-          margin: 10px auto;
-          margin-top: 15px;
-          margin-left: 20px;
-          width: auto;
+          margin: 10px;
+          width: auto; /* Adjust the width based on content */
           border: 1px solid #b7491d;
           background-color: transparent;
           color: #b7491d;
@@ -1733,4 +1731,5 @@ html, body {
           vertical-align: middle;
           margin-right: 5px;
         }
+        
           
