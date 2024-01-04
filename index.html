@@ -128,7 +128,7 @@
             <div class="row">
               <div class="image col-xl-3 d-flex align-items-stretch justify-content-center justify-content-xl-start"
                 data-aos="fade-right" data-aos-delay="150">
-                <img src="assets/img/GaddaDisegno.png" alt="" class="img-fluid gdDisfront">
+                <div id="observablehq-image-a0b948ab"></div>   
 
               </div>
     
@@ -140,7 +140,7 @@
                         <i class="bi bi-file-earmark-bar-graph"></i>
                         <span data-purecounter-start="0" data-purecounter-end="10" data-purecounter-duration="1.3"
                           class="purecounter"></span>
-                        <p><strong>Archives</strong>Lorem ipsum</p>
+                        <p><strong>Archives</strong> to browse into Gadda's work</p>
                       </div>
                     </div>
     
@@ -166,9 +166,9 @@
                     <div class="col-md-6 d-md-flex align-items-md-stretch">
                       <div class="count-box">
                         <i class="bi bi-mortarboard-fill"></i>
-                        <span data-purecounter-start="0" data-purecounter-end="6322" data-purecounter-duration="1.3"
+                        <span data-purecounter-start="0" data-purecounter-end="16" data-purecounter-duration="1.3"
                           class="purecounter"></span>
-                        <p><strong>Visualizations</strong> Lorem ipsum</p>
+                        <p><strong>Visualizations</strong> that display the data in a straightforward way</p>
                       </div>
                     </div>
                   </div>
@@ -306,7 +306,67 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script>
+   <!-- Template Observable  -->
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+  
+   <script type="module">
+ 
+   import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+   import define from "https://api.observablehq.com/d/a5f0ff8f114c2929@419.js?v=4";
+ 
+   const runtime = new Runtime();
+ const main = runtime.module(define, name => {
+   if (name === "image") {
+     return new Inspector(document.querySelector("#observablehq-image-a0b948ab"));
+   }
+ });
+ 
+ 
+ 
+ // Redefine the cell “width” to have a fixed value of 640; this masks the value
+ // provided by the Observable standard library.
+ main.redefine("width", 270);
+ 
+   
+   </script>
+ 
+ 
+ 
+   <script> 
+
+
+  new PureCounter(); 
+ var speed = 20;
+ 
+ // Create an Intersection Observer instance
+ var observer = new IntersectionObserver(function(entries, observer) {
+     entries.forEach(function(entry) {
+         if (entry.isIntersecting) {
+             // Start the count animation when the element is in the viewport
+             incEltNbr("nbr");
+             observer.unobserve(entry.target); // Stop observing once triggered
+         }
+     });
+ }, { threshold: 0.5 }); // Adjust threshold as needed
+ 
+ // Observe the target element
+ observer.observe(document.getElementById("nbr"));
+ 
+ function incEltNbr(id) {
+   elt = document.getElementById(id);
+   endNbr = Number(elt.innerHTML);
+   incNbrRec(0, endNbr, elt);
+ }
+ 
+ function incNbrRec(i, endNbr, elt) {
+   if (i <= endNbr) {
+     elt.innerHTML = i;
+     setTimeout(function() {
+       incNbrRec(i + 26, endNbr, elt);
+     }, speed);
+   }
+ }
+ 
      /**
    * Initiate Pure Counter 
    */
