@@ -384,8 +384,8 @@ h6 {
 --------------------------------------------------------------*/
 #hero {
   width: 100%;
-  height: 50vh;
-  background: url("https://www.adelphi.it/spool/cover_9788845933066__id8017_w1200_t1540375120.jpg") bottom center;
+  height: 80vh;
+  background: url("../img/archivebanner.png") bottom center;
   background-size: cover;
   position: relative;
 }
