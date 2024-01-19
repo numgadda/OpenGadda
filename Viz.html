@@ -42,6 +42,37 @@
 
 <style>
 
+#hero3 {
+  width: 100%;
+  height: 80vh;
+  background: url("../img/VizBanner.jpg") bottom center;
+  background-size: cover;
+  position: relative;
+}
+
+#hero3:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.269);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+#hero3 .hero-container {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 0 15px;
+}
 
 
   
@@ -263,7 +294,12 @@ font-weight: bold;
       </div>
     </header><!-- End Header -->
   
-   
+    <!-- ======= Hero Section ======= -->
+  <section id="hero3" style="height: 50vh;">
+    <div class="hero-container">
+     
+    </div>
+  </section><!-- End Hero -->
    
    
     <main id="main" >
