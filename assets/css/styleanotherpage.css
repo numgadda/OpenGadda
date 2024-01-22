@@ -385,7 +385,7 @@ h6 {
 #hero {
   width: 100%;
   height: 50vh;
-  background: url("https://www.adelphi.it/spool/cover_9788845933066__id8017_w1200_t1540375120.jpg") bottom center;
+  background: url("../img/LibBanner3.png") bottom center;
   background-size: cover;
   position: relative;
 }
@@ -1670,7 +1670,7 @@ html, body {
     #hero2 {
       width: 100%;
       height: 50vh;
-      background: url("/Users/martinapensalfini/Desktop/numgaddasite-main/assets/img/Gadda.jpg") bottom center;
+      background: url("../img/LibBanner8.png") bottom center;
       background-size: cover;
       position: relative;
 
