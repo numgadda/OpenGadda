@@ -115,6 +115,7 @@ h6 {
   padding: 0;
   color:#f7f2df;
   background-color: #b7491d;
+  z-index: 0;
 }
 
 .navbar ul {
@@ -369,7 +370,11 @@ h6 {
 #hero {
   width: 100%;
   height: 80vh;
-  background: url("../img/gaddabanner.png") center bottom / cover no-repeat;
+  margin: 0;
+  padding: 0;
+  background: url("../img/gaddabanner2.png") center bottom;
+  background-position: center center;
+  background-size: cover;
   position: relative;
 }
 
