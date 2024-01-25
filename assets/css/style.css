@@ -369,10 +369,10 @@ h6 {
 #hero {
   width: 100%;
   height: 80vh;
-  background: url("../img/gaddabanner2.png") bottom center;
-  background-size: cover;
+  background: url("../img/gaddabanner.png") center bottom / cover no-repeat;
   position: relative;
 }
+
 
 
 
