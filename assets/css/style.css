@@ -376,7 +376,24 @@ h6 {
   background-position: center center;
   background-size: cover;
   position: relative;
+  background-attachment: fixed; /* Fixed background */
 }
+
+/* Chrome specific styles */
+@media screen and (min-resolution: 192dpi) {
+  #hero {
+    width: 100%;
+    height: 600px;
+    margin: 0;
+    padding: 0;
+    background: url("../img/gaddabanner.png") center bottom;
+    background-position: center top; /* Adjust as needed */
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed; /* Fixed background */
+  }
+}
+
 
 
 
