@@ -327,6 +327,7 @@ font-weight: bold;
       <div class="row">
 
         <div class="col-sm-12 col-md-7">
+          <div id="observablehq-image-73bb894e" ></div>
              </div>
         <div class="col-sm-12 col-md-5">
          <p>Delving into <span class="highlight">Gadda's personal library </span>offers a unique insight into the preferences and habits that shaped him as an author. The data extracted from his library allows us to explore the mind of the engineer through a careful analysis. This page presents the data with the goal of providing a straightforward <span class="highlight">visualization </span>of key aspects:
@@ -564,7 +565,29 @@ The data underscores the author's engagement with scholastic volumes. This empha
   <script src="assets/js/main.js"></script>
   <script src="assets/js/library.js"></script>
 
+  <!-- Template Observable  -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
+  
+  <script type="module">
 
+  import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+  import define from "https://api.observablehq.com/d/a5f0ff8f114c2929@413.js?v=4";
+
+  const runtime = new Runtime();
+const main = runtime.module(define, name => {
+  if (name === "image") {
+    return new Inspector(document.querySelector("#observablehq-image-73bb894e"));
+  }
+});
+
+
+
+// Redefine the cell “width” to have a fixed value of 640; this masks the value
+// provided by the Observable standard library.
+main.redefine("width", 700);
+
+  
+  </script>
 
 
 
@@ -1474,7 +1497,7 @@ var data = [
     name: "Carlo Emilio Gadda ",
     steps: 49,
     pictureSettings: {
-      src: "http://www.sba.unisi.it/wp-content/uploads/2014/11/GADDA-214x300.jpg"
+      src: "https://upload.wikimedia.org/wikipedia/commons/1/13/Gadda_1921.jpg"
     }
   },
   {

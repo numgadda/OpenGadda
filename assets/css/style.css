@@ -368,36 +368,40 @@ h6 {
 # Hero Section
 --------------------------------------------------------------*/
 #hero {
+  display: flex;
   width: 100%;
   height: 80vh;
-  margin: 0;
-  padding: 0;
-  background: url("../img/gaddabanner.png") center bottom;
-  background-position: center center;
-  background-size: cover;
+  background-color: #b7491d;
   position: relative;
-  background-attachment: fixed; /* Fixed background */
+  padding-bottom: 0px;
 }
 
-/* Chrome specific styles */
-@media screen and (min-resolution: 192dpi) {
-  #hero {
-    width: 100%;
-    height: 600px;
-    margin: 0;
-    padding: 0;
-    background: url("../img/gaddabanner.png") center bottom;
-    background-position: center top; /* Adjust as needed */
-    background-size: cover;
-    position: relative;
-    background-attachment: fixed; /* Fixed background */
-  }
+#texthero {
+  color: #f7f2df;
+  margin: 15px 0 0 0;
+    font-size: 32px;
+    font-weight: 700;
+    font-family: "Nunito", sans-serif;
 }
 
+.hero-container {
+  display: flex;
+  height: 100%;
+}
 
+.hero-column {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  z-index: 200;
+}
 
-
-
+#hero img {
+  max-width: 100%;
+  height: 370px;
+}
 
 #hero:before {
   content: "";
@@ -409,19 +413,10 @@ h6 {
   right: 0;
 }
 
-#hero .hero-container {
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  padding: 0 15px;
+#hero .btn-get-started {
+  margin-top: 20px; /* Adjust as needed */
 }
+
 
 #hero h3 {
   background: rgba(255, 255, 255, 0.1);

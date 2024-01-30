@@ -77,12 +77,28 @@
     </div>
   </header><!-- End Header -->
 
-  <!-- ======= Hero Section ======= -->
-  <section id="hero">
-    <div class="hero-container">
-      <a href="#about" class="btn-get-started scrollto">Get Started</a>
+ <!-- ======= Hero Section ======= -->
+<section id="hero">
+    <div class="hero-column">
+      <img src="assets/img/chart.png" alt="Image 1">
     </div>
-  </section><!-- End Hero -->
+    <div class="hero-column">
+      <p id="texthero"><span style="font-size: xxx-large; font-weight: 900; color: #f7f2df;">OpenGadda</span>: {
+        <br>
+          author: "Carlo Emilio Gadda";
+          <br>
+          birth: "14th November 1873";
+          <br>
+          death: "21th May 1973"
+          <br>
+          }
+      </p>
+      <div id="observablehq-image-a626f5c8" style="margin-top: 190px;"></div>   
+     </div>
+  <!--  <a href="#about" class="btn-get-started scrollto">Get Started</a>-->
+  </div>
+</section><!-- End Hero -->
+
 
   <main id="main">
 
@@ -305,27 +321,39 @@
   <script src="assets/js/main.js"></script>
    <!-- Template Observable  -->
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@5/dist/inspector.css">
-  
+
    <script type="module">
- 
-   import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
-   import define from "https://api.observablehq.com/d/a5f0ff8f114c2929@419.js?v=4";
- 
-   const runtime = new Runtime();
- const main = runtime.module(define, name => {
-   if (name === "image") {
-     return new Inspector(document.querySelector("#observablehq-image-a0b948ab"));
-   }
- });
- 
- 
- 
- // Redefine the cell “width” to have a fixed value of 640; this masks the value
- // provided by the Observable standard library.
- main.redefine("width", 270);
- 
-   
-   </script>
+    import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+    import define1 from "https://api.observablehq.com/d/6d82de79537beff9@428.js?v=4";
+  
+    const runtime1 = new Runtime();
+    const main1 = runtime1.module(define1, name => {
+      if (name === "image") {
+        return new Inspector(document.querySelector("#observablehq-image-a626f5c8"));
+      }
+    });
+  
+    // Redefine the cell “width” to have a fixed value of 270; this masks the value
+    // provided by the Observable standard library.
+    main1.redefine("width", 270);
+  </script>
+  
+  <script type="module">
+    import { Runtime, Inspector } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@5/dist/runtime.js";
+    import define2 from "https://api.observablehq.com/d/a5f0ff8f114c2929@419.js?v=4";
+  
+    const runtime2 = new Runtime();
+    const main2 = runtime2.module(define2, name => {
+      if (name === "image") {
+        return new Inspector(document.querySelector("#observablehq-image-a0b948ab"));
+      }
+    });
+  
+    // Redefine the cell “width” to have a fixed value of 270; this masks the value
+    // provided by the Observable standard library.
+    main2.redefine("width", 270);
+  </script>
+  
  
  
  
