@@ -392,11 +392,18 @@ h6 {
 .hero-column {
   flex: 1;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center; /* Add this line */
   overflow: hidden;
   z-index: 200;
 }
+
+#collib {
+  z-index: 200;
+  margin-top: 50px;
+    margin-bottom: auto;
+}
+
 
 #hero img {
   max-width: 100%;
