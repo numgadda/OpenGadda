@@ -73,6 +73,7 @@ h6 {
 #header {
   transition: all 0.5s;
   z-index: 997;
+  padding: 20px 0;
   background-color: #b7491d;
 }
 
@@ -382,15 +383,40 @@ h6 {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-#hero {
-  width: 100%;
-  height: 50vh;
-  background: url("../img/VizBanner3.png") bottom center;
+#hero2 {
+  height: 60vh;
+  background-color: #b7491d;
   background-size: cover;
   position: relative;
 }
 
-#hero:before {
+#texthero {
+  color: #f7f2df;
+  margin: 15px 0 0 0;
+    font-size: 32px;
+    font-weight: 700;
+    font-family: "Nunito", sans-serif;
+}
+
+
+#collib {
+  z-index: 200;
+  margin-top: 50px;
+    margin-bottom: auto;
+}
+
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+
+#hero img {
+  max-width: 100%;
+  height: 370px;
+}
+
+#hero2:before {
   content: "";
   background: rgba(0, 0, 0, 0.269);
   position: absolute;
@@ -400,43 +426,6 @@ h6 {
   right: 0;
 }
 
-#hero .hero-container {
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  padding: 0 15px;
-}
-
-#hero h3 {
-  background: rgba(255, 255, 255, 0.1);
-  color: #f7f2df;
-  font-size: 26px;
-  padding: 10px 30px;
-  margin-bottom: 30px;
-  border-radius: 50px;
-}
-
-#hero h1 {
-  margin: 0 0 10px 0;
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 56px;
-  text-transform: uppercase;
-  color: #f7f2df;
-}
-
-#hero h2 {
-  color: #eee;
-  margin-bottom: 40px;
-  font-size: 24px;
-}
 
 #hero .btn-get-started {
   font-family: "Poppins", sans-serif;
@@ -1297,14 +1286,6 @@ html, body {
       background-color: #b7491d;
     }
 
-    #hero2 {
-      width: 100%;
-      height: 100vh;
-      background: url("../img/GaddaCopia.jpg") top center;
-      background-size: cover;
-      position: relative;
-    }
-    
     
     
     
@@ -1666,14 +1647,7 @@ html, body {
       width: 435px; /* Adjust the width as needed */
     }
 
-    #hero2 {
-      width: 100%;
-      height: 50vh;
-      background: url("/Users/martinapensalfini/Desktop/numgaddasite-main/assets/img/Gadda.jpg") bottom center;
-      background-size: cover;
-      position: relative;
-
-    }
+    
 
         /* CSS styles for the sidebar */
         .sidebara {

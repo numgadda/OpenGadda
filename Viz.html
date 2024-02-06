@@ -42,37 +42,6 @@
 
 <style>
 
-#hero3 {
-  width: 100%;
-  height: 80vh;
-  background: url("assets/img/VizBanner4.png") bottom center;
-  background-size: cover;
-  position: relative;
-}
-
-#hero3:before {
-  content: "";
-  background: rgba(0, 0, 0, 0.269);
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-#hero3 .hero-container {
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  padding: 0 15px;
-}
 
 
   
@@ -226,15 +195,15 @@
   margin-top: 100px;
 }
 
-section{
+main .section{
   padding: 0 0;
 }
-section {
+main .section {
     margin-bottom: 1.3rem;
     margin-top: 1.3rem;
 }
 
-.row{
+main .row{
   margin: 50px
 }
 
@@ -295,12 +264,16 @@ font-weight: bold;
     </header><!-- End Header -->
   
     <!-- ======= Hero Section ======= -->
-  <section id="hero3" style="height: 50vh;">
-    <div class="hero-container">
-     
+<section id="hero2" class="row" style="height: 50vh;">
+  <div class="col-sm-12 col-md-5 d-flex justify-content-right" id="collib" >
+    <img src="assets/img/BannerViz.png" style="max-width: 35%; margin-left: 383px;">      <!-- Content for the first column goes here -->
     </div>
-  </section><!-- End Hero -->
-   
+
+  <div class="col-sm-12 col-md-7 " style="font-size: xxx-large; font-weight: 900; color: #f7f2df; text-align: left; font-family: 'Nunito';" id="collib">
+    <p style="margin-top: 120px;">Visualizations</p>
+  </div>
+</section><!-- End Hero -->
+
    
     <main id="main" >
 

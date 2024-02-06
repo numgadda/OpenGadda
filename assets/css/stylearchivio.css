@@ -73,6 +73,7 @@ h6 {
 #header {
   transition: all 0.5s;
   z-index: 997;
+  padding: 20px 0;
   background-color: #b7491d;
 }
 
@@ -110,26 +111,24 @@ h6 {
 # Navigation Menu
 --------------------------------------------------------------*/
 /* Add this CSS to your existing stylesheet or in a <style> tag in the HTML */
-#navbar {
-  display: flex;
-  justify-content: flex-end; /* Align items to the right */
+.navbar {
+  padding: 0;
+  color:#f7f2df;
+  background-color: #b7491d;
+  z-index: 0;
 }
 
-#navbar ul {
+.navbar ul {
   margin: 0;
   padding: 0;
   display: flex;
   list-style: none;
+  align-items: center;
 }
 
-#navbar ul li {
-  margin-right: 20px;
+.navbar li {
+  position: relative;
 }
-
-#navbar ul li:last-child {
-  margin-right: 0;
-}
-
 
 .navbar>ul>li {
   white-space: nowrap;
@@ -382,15 +381,40 @@ h6 {
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-#hero {
-  width: 100%;
+#hero2 {
   height: 60vh;
-  background: url("../img/ArchBanner4.png") bottom center;
+  background-color: #b7491d;
   background-size: cover;
   position: relative;
 }
 
-#hero:before {
+#texthero {
+  color: #f7f2df;
+  margin: 15px 0 0 0;
+    font-size: 32px;
+    font-weight: 700;
+    font-family: "Nunito", sans-serif;
+}
+
+
+#collib {
+  z-index: 200;
+  margin-top: 50px;
+    margin-bottom: auto;
+}
+
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+
+#hero img {
+  max-width: 100%;
+  height: 370px;
+}
+
+#hero2:before {
   content: "";
   background: rgba(0, 0, 0, 0.269);
   position: absolute;
@@ -400,19 +424,10 @@ h6 {
   right: 0;
 }
 
-#hero .hero-container {
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
-  padding: 0 15px;
+#hero .btn-get-started {
+  margin-top: 20px; /* Adjust as needed */
 }
+
 
 #hero h3 {
   background: rgba(255, 255, 255, 0.1);
@@ -458,7 +473,7 @@ h6 {
 }
 
 @media (min-width: 1024px) {
-  #hero {
+  #hero2 {
     background-attachment: fixed;
   }
 }
@@ -483,58 +498,6 @@ h6 {
 @media (max-height: 500px) {
   #hero {
     height: 150vh;
-  }
-}
-
-/*--------------------------------------------------------------
-# Sections General
---------------------------------------------------------------*/
-section {
-  padding: 60px 0;
-  overflow: hidden;
-}
-
-.section-bg {
-  background-color: white;
-}
-
-.section-title {
-  text-align: center;
-  padding-bottom: 30px;
-}
-
-.section-title h2 {
-  font-size: 13px;
-  letter-spacing: 1px;
-  font-weight: 700;
-  padding: 8px 20px;
-  line-height: 1;
-  margin: 0;
-  background: #fdeff2;
-  color: #b7491d;
-  display: inline-block;
-  text-transform: uppercase;
-  border-radius: 50px;
-}
-
-.section-title h3 {
-  margin: 15px 0 0 0;
-  font-size: 32px;
-  font-weight: 700;
-}
-
-.section-title h3 span {
-  color: #b7491d;
-}
-
-.section-title p {
-  margin: 15px auto 0 auto;
-  font-weight: 600;
-}
-
-@media (min-width: 1024px) {
-  .section-title p {
-    width: 50%;
   }
 }
 
@@ -1298,14 +1261,7 @@ html, body {
       background-color: #b7491d;
     }
 
-    #hero2 {
-      width: 100%;
-      height: 100vh;
-      background: url("../img/GaddaCopia.jpg") top center;
-      background-size: cover;
-      position: relative;
-    }
-    
+   
     
     
     
@@ -1667,14 +1623,7 @@ html, body {
       width: 435px; /* Adjust the width as needed */
     }
 
-    #hero2 {
-      width: 100%;
-      height: 50vh;
-      background: url("/Users/martinapensalfini/Desktop/numgaddasite-main/assets/img/Gadda.jpg") bottom center;
-      background-size: cover;
-      position: relative;
-
-    }
+    
 
         /* CSS styles for the sidebar */
         .sidebara {
