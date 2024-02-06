@@ -969,21 +969,21 @@ section {
 /* Style the 'N' column for even rows */
 #jsonTable tbody tr:nth-child(even) td:nth-child(1) {
   /* Apply styles for even rows in the 'N' column */
-  background-color: #f7f2df; /* Example background color */
-  color: #2b240c; /* Example text color */
+  background-color: #f7f2df; 
+  color: #2b240c; 
 }
 
 
 /* Adjustments for the buttons container */
 #buttonsContainer {
-  width: 200px; /* Set your desired width */
-  height: auto; /* Or set a specific height */
+  width: 200px; 
+  height: auto; 
   background-color: transparent;
   border: 1px solid #ccc;
   padding: 10px;
   margin-top: 20px;
   border-radius: 8px;
-  border: 1px solid #b7491d; /* Adjust top margin as needed */
+  border: 1px solid #b7491d; 
 }
 
 /* Style for the filter buttons */
@@ -1015,9 +1015,9 @@ section {
 /* Add this style to change the background color of the first row */
 /* Red header color */
 .red-header {
-  background-color:  #b7491d; /* Your red color code */
+  background-color:  #b7491d; 
   color:  #f7f2df;
-  /* Other styles as needed */
+
 }
 
 /* Example CSS using flexbox to display search and entries dropdown on the same line */
@@ -1031,12 +1031,12 @@ section {
 
 .dataTables_wrapper .dataTables_filter,
 .dataTables_wrapper .dataTables_length {
-  margin-bottom: 30px; /* Reset individual margins */
+  margin-bottom: 30px; 
 }
 
 /* Example CSS to add margin around the table */
 .dataTables_wrapper {
-  margin: 20px; /* Adjust margin to create space around the table */ /* Optional border for visualization */
+  margin: 20px; 
 }
 
 .dropdown-container {
@@ -1102,7 +1102,7 @@ section {
 
   padding: 20px;
 
-  display: none; /* Initially hide the sidebar */
+  display: none; 
 }
 .checkbox-container label,
 .dropdown-container select {
@@ -1112,19 +1112,19 @@ section {
 
 /* Prevent horizontal scrolling */
 html, body {
-  overflow-x: hidden; /* Disable horizontal scrollbar */
-  width: 100%; /* Ensure full width */
+  overflow-x: hidden; 
+  width: 100%; 
 }
 
 /* Adjust table container width */
 #tableContainer {
-  width: 100%; /* Set the table container to occupy full width */
-  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  width: 100%; 
+  overflow-x: auto; 
 }
 
 /* Adjust the sidebar width and visibility */
 .sidebar {
-  width: 250px; /* Set your desired sidebar width */
+  width: 250px; 
   background-color: transparent;
   padding: 20px;
   display: none;
@@ -1132,7 +1132,7 @@ html, body {
   margin-left: 20px;
   margin-top: 10px;
   border-radius: 8px;
- /* Ensure sidebar is visible */
+
 }
 
 #jsonTable {
@@ -1149,25 +1149,25 @@ html, body {
 
 /* Button styles */
 #toggleButton {
-  height: 60px; /* Adjust button height */
-  padding: 8px 16px; /* Add padding */
+  height: 60px; 
+  padding: 8px 16px;
   margin-top: 88px;
-  margin-left: 20px; /* Add margin to create space between the button and accordion */
-  width: auto; /* Adjust width based on content */
-  border: 1px solid #b7491d; /* Add a thinner border */
-  background-color: transparent; /* Set a transparent background */
-  color:#b7491d; /* Set a softer text color */
-  font-size: 14px; /* Adjust font size */
-  border-radius: 8px; /* Add a slight border radius */
-  cursor: pointer; /* Change cursor to pointer on hover */
-  transition: color 0.3s, border-color 0.3s; /* Add transition effect for color and border */
+  margin-left: 20px; 
+  width: auto; 
+  border: 1px solid #b7491d; 
+  background-color: transparent; 
+  color:#b7491d;
+  font-size: 14px; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  transition: color 0.3s, border-color 0.3s; 
 }
 
 /* Hover effect */
 #toggleButton:hover {
-  color:#dad3b5; /* Change text color on hover to slightly darker */
+  color:#dad3b5; 
   border-color: #b7491d;
-  background-color:#b7491d ; /* Change border color on hover */
+  background-color:#b7491d ; 
 }
 
 
@@ -1185,7 +1185,7 @@ html, body {
   transition: 0.4s;
   margin-top: 20px;
   margin-left: 20px;
-  margin-right: 60px !important; /* Adjusted margin to match the table on the right *//* Adjusted margin to match the table on the right */
+  margin-right: 60px !important; 
   border-radius: 8px !important;
 }
 
@@ -1213,69 +1213,69 @@ html, body {
 /* Style the search box */
 .dataTables_wrapper .dataTables_filter input[type="search"] {
   /* Add your styles here */
-  background-color: #f7f2df; /* Change the background color */
-  color: #b7491d; /* Change the text color */
+  background-color: #f7f2df; 
+  color: #b7491d; 
   border: 1px solid #b7491d;
-  color: #b7491d; /* Change the border color */
+  color: #b7491d; 
 }
 
 /* Style the row selection */
 .dataTables_wrapper .dataTables_length select {
   /* Add your styles here */
-  background-color: #f7f2df; /* Change the background color */
-  color: #b7491d; /* Change the text color */
+  background-color: #f7f2df; 
+  color: #b7491d; 
   border: 1px solid #b7491d; 
-  color: #b7491d;/* Change the border color */
+  color: #b7491d;
 }
 
 /* Style the pagination buttons */
 .dataTables_wrapper .dataTables_paginate .paginate_button {
   /* Add your styles here */
-  background-color: #f7f2df; /* Change the background color */
-  color: #b7491d; /* Change the text color */
+  background-color: #f7f2df; 
+  color: #b7491d; 
   border: 1px solid #b7491d; 
-  color: #b7491d;/* Change the border color */
+  color: #b7491d;
 }
 
 /* Style the active pagination button */
 .dataTables_wrapper .dataTables_paginate .paginate_button.current {
   /* Add your styles here */
-  background-color: #b7491d; /* Change the background color */
-  color: #f7f2df; /* Change the text color */
+  background-color: #b7491d; 
+  color: #f7f2df; 
   border: 1px solid #b7491d;
-  color: #b7491d; /* Change the border color */
+  color: #b7491d; 
 }
 
 /* Style the disabled pagination button */
 .dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
   /* Add your styles here */
-  background-color: #ccc; /* Change the background color */
-  color: #999; /* Change the text color */
+  background-color: #ccc; 
+  color: #999; 
   border: 1px solid #ccc; 
-  color: #b7491d;/* Change the border color */
+  color: #b7491d;
 }
 
      /* Button styles */
     .button-container {
-      text-align: center; /* Center align the buttons */
+      text-align: center; 
     }
 
     #toggleButton,
     #redirectButton {
-      display: block; /* Display as block-level elements */
-      height: 60px; /* Adjust button height */
-      padding: 8px 16px; /* Add padding */
+      display: block; 
+      height: 60px; 
+      padding: 8px 16px; 
       margin: 10px auto; 
       margin-top:15px;
-      margin-left:20px;/* Center the buttons horizontally and add margin between them */
-      width: auto; /* Adjust width based on content */
-      border: 1px solid #b7491d; /* Add a thinner border */
-      background-color: transparent; /* Set a transparent background */
-      color: #b7491d; /* Set a softer text color */
-      font-size: 14px; /* Adjust font size */
-      border-radius: 8px; /* Add a slight border radius */
-      cursor: pointer; /* Change cursor to pointer on hover */
-      transition: color 0.3s, border-color 0.3s; /* Add transition effect for color and border */
+      margin-left:20px;
+      width: auto; 
+      border: 1px solid #b7491d; 
+      background-color: transparent; 
+      color: #b7491d; 
+      font-size: 14px; 
+      border-radius: 8px; 
+      cursor: pointer; 
+      transition: color 0.3s, border-color 0.3s; 
     }
 
     /* Hover effect for both buttons */
@@ -1291,14 +1291,14 @@ html, body {
     
     main {
       flex-grow: 1;
-      padding: 20px; /* Adjust the padding as needed */
+      padding: 20px; 
       transition: margin-left 0.3s;
     }
     
     aside {
-      width: 250px; /* Set the width of the sidebar */
-      background-color: #f1f1f1; /* Set the background color of the sidebar */
-      padding: 20px; /* Adjust the padding as needed */
+      width: 250px; 
+      background-color: #f1f1f1; 
+      padding: 20px; 
       position: fixed;
       height: 100%;
       overflow: auto;
@@ -1316,7 +1316,7 @@ html, body {
         list-style: none;
         margin-bottom: 20px;
         margin-top: 2px;
-        display: flex; /* Make the list items flex containers to keep buttons horizontal */
+        display: flex; 
         width: 100%;
         float: left;
         clear: both;
@@ -1326,7 +1326,7 @@ html, body {
     
       
     .filter-by li, .sort-by li, .filter-annotation li {
-      margin-right: 10px; /* Add horizontal spacing between buttons */
+      margin-right: 10px; 
     }
     
     
@@ -1335,22 +1335,7 @@ html, body {
       margin-bottom: 4px;
     }
     
-    /*.sort-by {
-      list-style: none;
-        margin-bottom: 10px;
-        display: flex;  Make the list items flex containers to keep buttons horizontal 
-    width: 100%;
-      float: left;
-      clear: both;
-      padding: 0;
-    margin-top: 0;}
-    
-    
-    .sort-by li {
-      margin-right: 10px;  Add horizontal spacing between buttons 
-    
-    }
-    */
+ 
     
     
     
@@ -1454,11 +1439,7 @@ html, body {
     
     
     
-    
-    /* Add a CSS class for the selected items to change the text color to red 
-    .selected {
-      color: red;
-    }*/
+ 
     .catalog{
       padding: 5px;
     }
@@ -1479,9 +1460,7 @@ html, body {
       /*box-shadow: inset 0 1px 0 #fff;*/
       border-radius: 5px;
       margin: 10px;
-      /*box-shadow: 0px 3px 15px rgba(0,0,0,0.2);*/
-       /*box-shadow: 0px 3px 15px #b7491d;*/
-       /*box-shadow: 0px 3px 5px #b7491d; BELLO*/
+   
     }
     
     
@@ -1494,15 +1473,15 @@ html, body {
     .pagination li {
       display: inline-block;
       padding: 5px;
-      margin-right: 5px; /* Add margin-right to create spacing between pagination items */
+      margin-right: 5px; 
     }
     
     
     .pagination li a {
-      border-radius: 10px; /* Add border-radius for rounded corners */
+      border-radius: 10px; 
       border: 2px solid #b7491d;
-      display: flex; /* Use flex for centering content */
-      float: left; /* Add float for left alignment */
+      display: flex; 
+      float: left; 
       background-color: #b7491d;
       cursor: pointer;
       cursor: hand;
@@ -1579,12 +1558,12 @@ html, body {
     
     .SchedeTematiche {
       cursor: pointer;
-      color: #b7491d; /* Optional: Change the color to indicate a link */
+      color: #b7491d; 
     }
     
     .SchedeTematiche:hover {
       cursor: pointer;
-      color: #cd8061; /* Optional: Change the color to indicate a link */
+      color: #cd8061; 
     }
     
     
@@ -1644,7 +1623,7 @@ html, body {
     }
 
     #searchInput {
-      width: 435px; /* Adjust the width as needed */
+      width: 435px;
     }
 
     
@@ -1676,7 +1655,7 @@ html, body {
     
         /* Other styles for the content */
         .maincontent {
-          margin-left: 250px; /* Adjust this to match the width of the sidebar */
+          margin-left: 250px; 
           padding: 20px;
         }
     
@@ -1688,7 +1667,7 @@ html, body {
           display: flex;
           flex-direction: row;
           justify-content: space-between;
-          margin-bottom: 50px; /* Adjust margin as needed */
+          margin-bottom: 50px;
         }
         
         .written-part,
@@ -1697,7 +1676,7 @@ html, body {
           display: flex;
           flex-direction: column;
           padding: 20px;
-          overflow: hidden; /* Add this line to prevent scrolling */
+          overflow: hidden; 
         }
         
         .map iframe,
@@ -1716,7 +1695,7 @@ html, body {
           }
         }
         .map {
-          overflow-x: hidden; /* Prevent horizontal scrolling */
+          overflow-x: hidden; 
         }
         .center {
           margin-top:10px;
@@ -1728,21 +1707,21 @@ html, body {
           text-align: center;
           color: #b7491d;
         }
-         /* Change accordion header color */
+         
   .accordion-button {
-    background-color: #f7f2df;/* Change to your desired color */
+    background-color: #f7f2df;
     color: #b7491d; 
   }
 
   /* Change accordion header color when expanded */
   .accordion-button:not(.collapsed) {
-    background-color: #f7f2df; /* Change to your desired color */
-    color: #b7491d; /* Change to your desired text color */
+    background-color: #f7f2df; 
+    color: #b7491d; 
   }
 
   /* Change accordion body background color */
   .accordion-body {
-    background-color: #f7f2df; /* Change to your desired color */
+    background-color: #f7f2df; 
   }
         
         
@@ -1769,7 +1748,7 @@ html, body {
  
   
   .written-part p {
-    margin-bottom: 15px; /* Adjust the value to set the desired space */
+    margin-bottom: 15px; 
   }
 
 .containergeo {
@@ -1779,16 +1758,16 @@ html, body {
     padding:10px;
     border-radius: 10px;
 
-    /* Adjust the value to set the desired space */
+  
   }
   .custom-list {
-    list-style-position: inside; /* Place the bullet inside the padding */
-    padding-left: 20px; /* Adjust the space between bullet point and text */
+    list-style-position: inside; 
+    padding-left: 20px; 
   }
   .element-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px; /* Adjust the gap between elements as needed */
+    gap: 20px; 
   }
 
   .bigger-element {
@@ -1799,7 +1778,7 @@ html, body {
 
 
   .element {
-    flex: 1 1 calc(50% - 10px); /* Adjust the width as needed */
+    flex: 1 1 calc(50% - 10px); 
   }
 
   @media (max-width: 768px) {
@@ -1811,31 +1790,31 @@ html, body {
 .element-container {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px; /* Adjust margin as needed */
-  width: 100%; /* Ensure the container takes the full width */
+  margin-bottom: 20px; 
+  width: 100%; 
 }
 
 /* Style for the graph element */
 .element {
-  width: 100%; /* Ensure the graph takes the full width */
-  height: auto; /* Maintain aspect ratio and adjust height accordingly */
-  max-width: 100%; /* Ensure the graph doesn't exceed its container's width */
+  width: 100%; 
+  height: auto;
+  max-width: 100%; 
 }
-/* CSS for arranging Sankey graphs side by side */
+
 .sankey-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px; /* Adjust the gap between the graphs as needed */
+  gap: 20px; 
 }
 
 .sankey-container .element {
-  flex: 1 1 calc(50% - 10px); /* Adjust the width as needed */
-  max-width: calc(50% - 10px); /* Adjust the max-width as needed */
+  flex: 1 1 calc(50% - 10px); 
+  max-width: calc(50% - 10px); 
 }
 
 .sankey-container .element:first-child,
 .sankey-container .element:last-child {
-  margin-bottom: 0; /* Remove margin-bottom for first and last elements */
+  margin-bottom: 0; 
 }
 
 

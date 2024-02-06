@@ -101,7 +101,7 @@ h6 {
   padding: 12px 0;
 }
 
-/* Add this to your existing CSS or styles.css file */
+
 .logo .white-icon {
   fill: #f7f2df;
 }
@@ -197,22 +197,22 @@ h6 {
   background: #f7f2df;
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
   transition: 0.3s;
-  /* Updated styles for vertical stacking */
+  
   display: none; /* Hide initially */
-  flex-direction: column; /* Stack items vertically */
-  align-items: flex-start; /* Align items to the start */
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .navbar .dropdown:hover>ul {
   opacity: 1;
   top: 100%;
   visibility: visible;
-  display: flex; /* Show on hover */
+  display: flex; 
 }
 
 .navbar .dropdown ul li {
   min-width: 200px;
-  /* Adjust other styles as needed */
+  
 }
 
 .navbar .dropdown ul a {
@@ -220,7 +220,7 @@ h6 {
   font-size: 14px;
   text-transform: none;
   color: #493c3e;
-  /* Adjust other styles as needed */
+  
 }
 
 
@@ -986,31 +986,29 @@ section {
 }
 
 
-/* Add this style to change the background color of the first row */
-/* Red header color */
+
 .red-header {
-  background-color:  #b7491d; /* Your red color code */
+  background-color:  #b7491d; 
   color:  #f7f2df;
-  /* Other styles as needed */
+
 }
 
-/* Example CSS using flexbox to display search and entries dropdown on the same line */
 .dataTables_wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px; /* Adjust margin for spacing */
+  margin-bottom: 10px; 
 }
 
 .dataTables_wrapper .dataTables_filter,
 .dataTables_wrapper .dataTables_length {
-  margin-bottom: 30px; /* Reset individual margins */
+  margin-bottom: 30px; 
 }
 
-/* Example CSS to add margin around the table */
+
 .dataTables_wrapper {
-  margin: 20px; /* Adjust margin to create space around the table */ /* Optional border for visualization */
+  margin: 20px; 
 }
 
 .dropdown-container {
@@ -1063,7 +1061,7 @@ section {
 
 .containeraa {
   display: flex;
-  flex-direction: column; /* Stack items vertically */
+  flex-direction: column;
   align-items: flex-start;
 }
 
@@ -1099,7 +1097,7 @@ html, body {
 
 /* Adjust the sidebar width and visibility */
 .sidebar {
-  width: 250px; /* Set your desired sidebar width */
+  width: 250px; 
   background-color: transparent;
   padding: 20px;
   display: none;
@@ -1124,25 +1122,25 @@ html, body {
 
 /* Button styles */
 #toggleButton {
-  height: 60px; /* Adjust button height */
-  padding: 8px 16px; /* Add padding */
+  height: 60px; 
+  padding: 8px 16px; 
   margin-top: 88px;
-  margin-left: 20px; /* Add margin to create space between the button and accordion */
-  width: auto; /* Adjust width based on content */
-  border: 1px solid #b7491d; /* Add a thinner border */
-  background-color: transparent; /* Set a transparent background */
-  color:#b7491d; /* Set a softer text color */
-  font-size: 14px; /* Adjust font size */
-  border-radius: 8px; /* Add a slight border radius */
-  cursor: pointer; /* Change cursor to pointer on hover */
-  transition: color 0.3s, border-color 0.3s; /* Add transition effect for color and border */
+  margin-left: 20px; 
+  width: auto; 
+  border: 1px solid #b7491d; 
+  background-color: transparent;
+  color:#b7491d; 
+  font-size: 14px; 
+  border-radius: 8px; 
+  cursor: pointer; 
+  transition: color 0.3s, border-color 0.3s; 
 }
 
 /* Hover effect */
 #toggleButton:hover {
-  color:#dad3b5; /* Change text color on hover to slightly darker */
+  color:#dad3b5; 
   border-color: #b7491d;
-  background-color:#b7491d ; /* Change border color on hover */
+  background-color:#b7491d ; 
 }
 
 
@@ -1160,7 +1158,7 @@ html, body {
   transition: 0.4s;
   margin-top: 20px;
   margin-left: 20px;
-  margin-right: 60px !important; /* Adjusted margin to match the table on the right *//* Adjusted margin to match the table on the right */
+  margin-right: 60px !important; 
   border-radius: 8px !important;
 }
 
@@ -1197,60 +1195,60 @@ html, body {
 /* Style the row selection */
 .dataTables_wrapper .dataTables_length select {
   /* Add your styles here */
-  background-color: #f7f2df; /* Change the background color */
-  color: #b7491d; /* Change the text color */
+  background-color: #f7f2df; 
+  color: #b7491d; 
   border: 1px solid #b7491d; 
-  color: #b7491d;/* Change the border color */
+  color: #b7491d;
 }
 
 /* Style the pagination buttons */
 .dataTables_wrapper .dataTables_paginate .paginate_button {
   /* Add your styles here */
-  background-color: #f7f2df; /* Change the background color */
-  color: #b7491d; /* Change the text color */
+  background-color: #f7f2df;
+  color: #b7491d; 
   border: 1px solid #b7491d; 
-  color: #b7491d;/* Change the border color */
+  color: #b7491d;
 }
 
 /* Style the active pagination button */
 .dataTables_wrapper .dataTables_paginate .paginate_button.current {
   /* Add your styles here */
-  background-color: #b7491d; /* Change the background color */
-  color: #f7f2df; /* Change the text color */
+  background-color: #b7491d; 
+  color: #f7f2df; 
   border: 1px solid #b7491d;
-  color: #b7491d; /* Change the border color */
+  color: #b7491d; 
 }
 
 /* Style the disabled pagination button */
 .dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
-  /* Add your styles here */
-  background-color: #ccc; /* Change the background color */
-  color: #999; /* Change the text color */
+
+  background-color: #ccc;
+  color: #999; 
   border: 1px solid #ccc; 
-  color: #b7491d;/* Change the border color */
+  color: #b7491d;
 }
 
      /* Button styles */
     .button-container {
-      text-align: center; /* Center align the buttons */
+      text-align: center; 
     }
 
     #toggleButton,
     #redirectButton {
-      display: block; /* Display as block-level elements */
-      height: 60px; /* Adjust button height */
-      padding: 8px 16px; /* Add padding */
+      display: block; 
+      height: 60px; 
+      padding: 8px 16px; 
       margin: 10px auto; 
       margin-top:15px;
-      margin-left:20px;/* Center the buttons horizontally and add margin between them */
-      width: auto; /* Adjust width based on content */
-      border: 1px solid #b7491d; /* Add a thinner border */
-      background-color: transparent; /* Set a transparent background */
-      color: #b7491d; /* Set a softer text color */
-      font-size: 14px; /* Adjust font size */
-      border-radius: 8px; /* Add a slight border radius */
-      cursor: pointer; /* Change cursor to pointer on hover */
-      transition: color 0.3s, border-color 0.3s; /* Add transition effect for color and border */
+      margin-left:20px;
+      width: auto; 
+      border: 1px solid #b7491d; 
+      background-color: transparent; 
+      color: #b7491d; 
+      font-size: 14px; 
+      border-radius: 8px; 
+      cursor: pointer; 
+      transition: color 0.3s, border-color 0.3s; 
     }
 
     /* Hover effect for both buttons */
@@ -1267,14 +1265,14 @@ html, body {
     
     main {
       flex-grow: 1;
-      padding: 20px; /* Adjust the padding as needed */
+      padding: 20px; 
       transition: margin-left 0.3s;
     }
     
     aside {
-      width: 250px; /* Set the width of the sidebar */
-      background-color: #f1f1f1; /* Set the background color of the sidebar */
-      padding: 20px; /* Adjust the padding as needed */
+      width: 250px; 
+      background-color: #f1f1f1; 
+      padding: 20px; 
       position: fixed;
       height: 100%;
       overflow: auto;
@@ -1292,7 +1290,7 @@ html, body {
         list-style: none;
         margin-bottom: 20px;
         margin-top: 2px;
-        display: flex; /* Make the list items flex containers to keep buttons horizontal */
+        display: flex; 
         width: 100%;
         float: left;
         clear: both;
@@ -1302,7 +1300,7 @@ html, body {
     
       
     .filter-by li, .sort-by li, .filter-annotation li {
-      margin-right: 10px; /* Add horizontal spacing between buttons */
+      margin-right: 10px; 
     }
     
     
@@ -1311,23 +1309,7 @@ html, body {
       margin-bottom: 4px;
     }
     
-    /*.sort-by {
-      list-style: none;
-        margin-bottom: 10px;
-        display: flex;  Make the list items flex containers to keep buttons horizontal 
-    width: 100%;
-      float: left;
-      clear: both;
-      padding: 0;
-    margin-top: 0;}
-    
-    
-    .sort-by li {
-      margin-right: 10px;  Add horizontal spacing between buttons 
-    
-    }
-    */
-    
+
     
     
     
@@ -1386,7 +1368,7 @@ html, body {
     
     .btn {
       display: block;
-      margin-top: 5px; /* Add margin to separate the elements vertically */
+      margin-top: 5px; 
     }
     
     
@@ -1430,11 +1412,6 @@ html, body {
     
     
     
-    
-    /* Add a CSS class for the selected items to change the text color to red 
-    .selected {
-      color: red;
-    }*/
     .catalog{
       padding: 5px;
     }
@@ -1452,12 +1429,10 @@ html, body {
       background-color: transparent;
       padding:10px;
       box-shadow: 0px 3px 5px #b7491d;
-      /*box-shadow: inset 0 1px 0 #fff;*/
+     
       border-radius: 5px;
       margin: 10px;
-      /*box-shadow: 0px 3px 15px rgba(0,0,0,0.2);*/
-       /*box-shadow: 0px 3px 15px #b7491d;*/
-       /*box-shadow: 0px 3px 5px #b7491d; BELLO*/
+      
     }
     
     
@@ -1555,12 +1530,12 @@ html, body {
     
     .SchedeTematiche {
       cursor: pointer;
-      color: #b7491d; /* Optional: Change the color to indicate a link */
+      color: #b7491d; 
     }
     
     .SchedeTematiche:hover {
       cursor: pointer;
-      color: #cd8061; /* Optional: Change the color to indicate a link */
+      color: #cd8061; 
     }
     
     
@@ -1620,7 +1595,7 @@ html, body {
     }
 
     #searchInput {
-      width: 435px; /* Adjust the width as needed */
+      width: 435px; 
     }
 
     
@@ -1652,7 +1627,7 @@ html, body {
     
         /* Other styles for the content */
         .maincontent {
-          margin-left: 250px; /* Adjust this to match the width of the sidebar */
+          margin-left: 250px; 
           padding: 20px;
         }
     

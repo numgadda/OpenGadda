@@ -100,7 +100,7 @@ h6 {
   padding: 12px 0;
 }
 
-/* Add this to your existing CSS or styles.css file */
+
 .logo .white-icon {
   fill: #f7f2df;
 }
@@ -109,7 +109,7 @@ h6 {
 /*--------------------------------------------------------------
 # Navigation Menu
 --------------------------------------------------------------*/
-/* Add this CSS to your existing stylesheet or in a <style> tag in the HTML */
+
 #navbar {
   display: flex;
   justify-content: flex-end; /* Align items to the right */
@@ -213,7 +213,7 @@ h6 {
 
 .navbar .dropdown ul li {
   min-width: 200px;
-  /* Adjust other styles as needed */
+  
 }
 
 .navbar .dropdown ul a {
@@ -221,7 +221,7 @@ h6 {
   font-size: 14px;
   text-transform: none;
   color: #493c3e;
-  /* Adjust other styles as needed */
+  
 }
 
 
@@ -938,9 +938,11 @@ section {
 
 
 
-/* Style the DataTable */
+/*--------------------------------------------------------------
+# DataTable & Searching tools
+--------------------------------------------------------------*/
 
-/* Change the background color of the table header */
+
 #jsonTable thead th {
   background-color: transparent;
   color: #b7491d;
@@ -949,7 +951,6 @@ section {
   text-align:center;
 }
 
-/* Change the background color of even rows */
 #jsonTable tbody tr:nth-child(even) {
   background-color: #f7f2df;
 }
@@ -966,35 +967,31 @@ section {
 
 }
 
-/* CSS */
-/* CSS */
-/* Style the 'N' column */
-/* CSS */
-/* Style the 'N' column for odd rows */
+
 #jsonTable tbody tr:nth-child(odd) td:nth-child(1) {
-  /* Apply styles for odd rows in the 'N' column */
-  background-color:#f2ebce ; /* Example background color */
-  color: #2b240c;  /* Example text color */
+  
+  background-color:#f2ebce ; 
+  color: #2b240c;  
 }
 
 /* Style the 'N' column for even rows */
 #jsonTable tbody tr:nth-child(even) td:nth-child(1) {
   /* Apply styles for even rows in the 'N' column */
-  background-color: #f7f2df; /* Example background color */
-  color: #2b240c; /* Example text color */
+  background-color: #f7f2df; 
+  color: #2b240c; 
 }
 
 
-/* Adjustments for the buttons container */
+*/
 #buttonsContainer {
-  width: 200px; /* Set your desired width */
-  height: auto; /* Or set a specific height */
+  width: 200px;
+  height: auto; 
   background-color: transparent;
   border: 1px solid #ccc;
   padding: 10px;
   margin-top: 20px;
   border-radius: 8px;
-  border: 1px solid #b7491d; /* Adjust top margin as needed */
+  border: 1px solid #b7491d; 
 }
 
 /* Style for the filter buttons */
@@ -1023,12 +1020,11 @@ section {
 }
 
 
-/* Add this style to change the background color of the first row */
-/* Red header color */
+
 .red-header {
-  background-color:  #b7491d; /* Your red color code */
+  background-color:  #b7491d; 
   color:  #f7f2df;
-  /* Other styles as needed */
+
 }
 
 /* Example CSS using flexbox to display search and entries dropdown on the same line */
@@ -1037,17 +1033,17 @@ section {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px; /* Adjust margin for spacing */
+  margin-bottom: 10px; 
 }
 
 .dataTables_wrapper .dataTables_filter,
 .dataTables_wrapper .dataTables_length {
-  margin-bottom: 30px; /* Reset individual margins */
+  margin-bottom: 30px; 
 }
 
-/* Example CSS to add margin around the table */
+
 .dataTables_wrapper {
-  margin: 20px; /* Adjust margin to create space around the table */ /* Optional border for visualization */
+  margin: 20px; 
 }
 
 .dropdown-container {
@@ -1100,7 +1096,7 @@ section {
 
 .containeraa {
   display: flex;
-  flex-direction: column; /* Stack items vertically */
+  flex-direction: column; 
   align-items: flex-start;
 }
 
@@ -1122,21 +1118,19 @@ section {
   margin-bottom: 10px;
 }
 
-/* Prevent horizontal scrolling */
+
 html, body {
-  overflow-x: hidden; /* Disable horizontal scrollbar */
-  width: 100%; /* Ensure full width */
+  overflow-x: hidden; 
+  width: 100%; 
 }
 
-/* Adjust table container width */
 #tableContainer {
-  width: 100%; /* Set the table container to occupy full width */
-  overflow-x: auto; /* Enable horizontal scrolling if needed */
+  width: 100%; 
+  overflow-x: auto; 
 }
 
-/* Adjust the sidebar width and visibility */
 .sidebar {
-  width: 250px; /* Set your desired sidebar width */
+  width: 250px; 
   background-color: transparent;
   padding: 20px;
   display: none;
@@ -1144,7 +1138,6 @@ html, body {
   margin-left: 20px;
   margin-top: 10px;
   border-radius: 8px;
- /* Ensure sidebar is visible */
 }
 
 #jsonTable {
@@ -1161,18 +1154,18 @@ html, body {
 
 /* Button styles */
 #toggleButton {
-  height: 60px; /* Adjust button height */
-  padding: 8px 16px; /* Add padding */
+  height: 60px;
+  padding: 8px 16px;
   margin-top: 88px;
-  margin-left: 20px; /* Add margin to create space between the button and accordion */
-  width: auto; /* Adjust width based on content */
-  border: 1px solid #b7491d; /* Add a thinner border */
-  background-color: transparent; /* Set a transparent background */
-  color:#b7491d; /* Set a softer text color */
-  font-size: 14px; /* Adjust font size */
-  border-radius: 8px; /* Add a slight border radius */
-  cursor: pointer; /* Change cursor to pointer on hover */
-  transition: color 0.3s, border-color 0.3s; /* Add transition effect for color and border */
+  margin-left: 20px; 
+  width: auto;
+  border: 1px solid #b7491d; 
+  background-color: transparent; 
+  color:#b7491d; 
+  font-size: 14px; 
+  border-radius: 8px; 
+  cursor: pointer;
+  transition: color 0.3s, border-color 0.3s;
 }
 
 /* Hover effect */
@@ -1197,11 +1190,10 @@ html, body {
   transition: 0.4s;
   margin-top: 20px;
   margin-left: 20px;
-  margin-right: 60px !important; /* Adjusted margin to match the table on the right *//* Adjusted margin to match the table on the right */
+  margin-right: 60px !important; 
   border-radius: 8px !important;
 }
 
-/* Hover effect */
 .accordion:hover {
   color: #dad3b5;
   border-color: #dad3b5;
@@ -1209,7 +1201,7 @@ html, body {
 }
 
 
-/* Style the accordion panel */
+
 .panel {
   padding: 0 18px;
   display: none;
@@ -1222,72 +1214,72 @@ html, body {
 }
 
 
-/* Style the search box */
+
 .dataTables_wrapper .dataTables_filter input[type="search"] {
-  /* Add your styles here */
-  background-color: #f7f2df; /* Change the background color */
-  color: #b7491d; /* Change the text color */
+
+  background-color: #f7f2df; 
+  color: #b7491d; 
   border: 1px solid #b7491d;
-  color: #b7491d; /* Change the border color */
+  color: #b7491d; 
 }
 
 /* Style the row selection */
 .dataTables_wrapper .dataTables_length select {
-  /* Add your styles here */
-  background-color: #f7f2df; /* Change the background color */
-  color: #b7491d; /* Change the text color */
+  
+  background-color: #f7f2df; 
+  color: #b7491d; 
   border: 1px solid #b7491d; 
-  color: #b7491d;/* Change the border color */
+  color: #b7491d;
 }
 
-/* Style the pagination buttons */
+
 .dataTables_wrapper .dataTables_paginate .paginate_button {
-  /* Add your styles here */
-  background-color: #f7f2df; /* Change the background color */
-  color: #b7491d; /* Change the text color */
+
+  background-color: #f7f2df; 
+  color: #b7491d; 
   border: 1px solid #b7491d; 
-  color: #b7491d;/* Change the border color */
+  color: #b7491d;
 }
 
 /* Style the active pagination button */
 .dataTables_wrapper .dataTables_paginate .paginate_button.current {
-  /* Add your styles here */
-  background-color: #b7491d; /* Change the background color */
-  color: #f7f2df; /* Change the text color */
+
+  background-color: #b7491d; 
+  color: #f7f2df; 
   border: 1px solid #b7491d;
-  color: #b7491d; /* Change the border color */
+  color: #b7491d; 
 }
 
 /* Style the disabled pagination button */
 .dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
-  /* Add your styles here */
-  background-color: #ccc; /* Change the background color */
-  color: #999; /* Change the text color */
+
+  background-color: #ccc; 
+  color: #999; 
   border: 1px solid #ccc; 
-  color: #b7491d;/* Change the border color */
+  color: #b7491d;
 }
 
      /* Button styles */
     .button-container {
-      text-align: center; /* Center align the buttons */
+      text-align: center; 
     }
 
     #toggleButton,
     #redirectButton {
-      display: block; /* Display as block-level elements */
-      height: 60px; /* Adjust button height */
-      padding: 8px 16px; /* Add padding */
+      display: block; 
+      height: 60px; 
+      padding: 8px 16px; 
       margin: 10px auto; 
       margin-top:15px;
-      margin-left:20px;/* Center the buttons horizontally and add margin between them */
-      width: auto; /* Adjust width based on content */
-      border: 1px solid #b7491d; /* Add a thinner border */
-      background-color: transparent; /* Set a transparent background */
-      color: #b7491d; /* Set a softer text color */
-      font-size: 14px; /* Adjust font size */
-      border-radius: 8px; /* Add a slight border radius */
-      cursor: pointer; /* Change cursor to pointer on hover */
-      transition: color 0.3s, border-color 0.3s; /* Add transition effect for color and border */
+      margin-left:20px;
+      width: auto; 
+      border: 1px solid #b7491d; 
+      background-color: transparent; 
+      color: #b7491d; 
+      font-size: 14px; 
+      border-radius: 8px; 
+      cursor: pointer; 
+      transition: color 0.3s, border-color 0.3s; 
     }
 
     /* Hover effect for both buttons */
@@ -1311,14 +1303,14 @@ html, body {
     
     main {
       flex-grow: 1;
-      padding: 20px; /* Adjust the padding as needed */
+      padding: 20px; 
       transition: margin-left 0.3s;
     }
     
     aside {
-      width: 250px; /* Set the width of the sidebar */
-      background-color: #f1f1f1; /* Set the background color of the sidebar */
-      padding: 20px; /* Adjust the padding as needed */
+      width: 250px; 
+      background-color: #f1f1f1; 
+      padding: 20px; 
       position: fixed;
       height: 100%;
       overflow: auto;
@@ -1336,7 +1328,7 @@ html, body {
         list-style: none;
         margin-bottom: 20px;
         margin-top: 2px;
-        display: flex; /* Make the list items flex containers to keep buttons horizontal */
+        display: flex; 
         width: 100%;
         float: left;
         clear: both;
@@ -1346,7 +1338,7 @@ html, body {
     
       
     .filter-by li, .sort-by li, .filter-annotation li {
-      margin-right: 10px; /* Add horizontal spacing between buttons */
+      margin-right: 10px;
     }
     
     
@@ -1355,22 +1347,7 @@ html, body {
       margin-bottom: 4px;
     }
     
-    /*.sort-by {
-      list-style: none;
-        margin-bottom: 10px;
-        display: flex;  Make the list items flex containers to keep buttons horizontal 
-    width: 100%;
-      float: left;
-      clear: both;
-      padding: 0;
-    margin-top: 0;}
-    
-    
-    .sort-by li {
-      margin-right: 10px;  Add horizontal spacing between buttons 
-    
-    }
-    */
+  
     
     
     
@@ -1430,7 +1407,7 @@ html, body {
     
     .btn {
       display: block;
-      margin-top: 5px; /* Add margin to separate the elements vertically */
+      margin-top: 5px; 
     }
     
     
@@ -1474,11 +1451,7 @@ html, body {
     
     
     
-    
-    /* Add a CSS class for the selected items to change the text color to red 
-    .selected {
-      color: red;
-    }*/
+   
     .catalog{
       padding: 5px;
     }
@@ -1496,12 +1469,10 @@ html, body {
       background-color: transparent;
       padding:10px;
       box-shadow: 0px 3px 5px #b7491d;
-      /*box-shadow: inset 0 1px 0 #fff;*/
+
       border-radius: 5px;
       margin: 10px;
-      /*box-shadow: 0px 3px 15px rgba(0,0,0,0.2);*/
-       /*box-shadow: 0px 3px 15px #b7491d;*/
-       /*box-shadow: 0px 3px 5px #b7491d; BELLO*/
+   
     }
     
     
@@ -1514,15 +1485,15 @@ html, body {
     .pagination li {
       display: inline-block;
       padding: 5px;
-      margin-right: 5px; /* Add margin-right to create spacing between pagination items */
+      margin-right: 5px; 
     }
     
     
     .pagination li a {
-      border-radius: 10px; /* Add border-radius for rounded corners */
+      border-radius: 10px; 
       border: 2px solid #b7491d;
-      display: flex; /* Use flex for centering content */
-      float: left; /* Add float for left alignment */
+      display: flex; 
+      float: left; 
       background-color: #b7491d;
       cursor: pointer;
       cursor: hand;
@@ -1599,12 +1570,12 @@ html, body {
     
     .SchedeTematiche {
       cursor: pointer;
-      color: #b7491d; /* Optional: Change the color to indicate a link */
+      color: #b7491d; 
     }
     
     .SchedeTematiche:hover {
       cursor: pointer;
-      color: #cd8061; /* Optional: Change the color to indicate a link */
+      color: #cd8061; 
     }
     
     
@@ -1664,7 +1635,7 @@ html, body {
     }
 
     #searchInput {
-      width: 435px; /* Adjust the width as needed */
+      width: 435px; 
     }
 
     #hero2 {
@@ -1683,7 +1654,7 @@ html, body {
   }
 
   #sidebar {
-    min-width: 300px; /* Adjust the width of the sidebar */
+    min-width: 300px; 
     max-width: 383px;
     background: #f7f2df;
     color: #b7491d;
@@ -1702,7 +1673,7 @@ html, body {
   }
 
   #main {
-    width: calc(100% - 300px); /* Adjust the width of the main content */
+    width: calc(100% - 300px);
     padding: 20px;
     min-height: 100vh;
     transition: all 0.3s;
@@ -1726,7 +1697,7 @@ html, body {
   #main .list li {
     margin-bottom: 10px;
     border: 1px solid #ddd;
-    padding: 15px; /* Adjust padding for list items */
+    padding: 15px; 
     width: 100%;
   }
 
@@ -1738,7 +1709,7 @@ html, body {
       }
   
       #sidebar {
-        min-width: 300px; /* Adjust the width of the sidebar */
+        min-width: 300px; 
         max-width: 450px;
         background: #f7f2df;
         color: #b7491d;
@@ -1757,7 +1728,7 @@ html, body {
       }
   
       #main {
-        width: calc(100% - 300px); /* Adjust the width of the main content */
+        width: calc(100% - 300px); 
         padding: 20px;
         min-height: 100vh;
         transition: all 0.3s;
@@ -1785,7 +1756,7 @@ html, body {
       #main .list li {
         margin-bottom: 10px;
         border: 1px solid #ddd;
-        padding: 15px; /* Adjust padding for list items */
+        padding: 15px; 
         width: 100%;
       }
 
@@ -1799,7 +1770,7 @@ html, body {
       
       .pagination button {
         /* Your button styles here */
-        margin: 0 5px; /* Adjust margin between pagination buttons */
+        margin: 0 5px; 
       }
        /* Style for sidebar content */
     #sidebar-content {
@@ -1841,20 +1812,20 @@ html, body {
 #showNonNullSegniButton {
   font-family: "Nunito", sans-serif;
   font-weight: 600;
-  font-size: 14px; /* Reduced font size */
+  font-size: 14px; 
   color: #b7491d;
   border: 2px solid #b7491d;
   background-color: transparent;
   margin-right: 5px;
-  padding: 3px 8px; /* Adjusted padding to make the button smaller */
-  border-radius: 20px; /* Reduced border-radius */
+  padding: 3px 8px; 
+  border-radius: 20px; 
   display: flex;
-  justify-content: center; /* Aligns content horizontally */
-  align-items: center; /* Aligns content vertically */
+  justify-content: center;
+  align-items: center; 
   cursor: pointer;
   margin-top: 10px;
-  width: fit-content; /* Adjust width as needed */
-  height: fit-content; /* Adjust height as needed */
+  width: fit-content; 
+  height: fit-content; 
 }
 
 
@@ -1867,7 +1838,7 @@ html, body {
 
     }
 
-    /* Style for sort buttons */
+  
     .sort-buttons {
       display: flex;
     }
