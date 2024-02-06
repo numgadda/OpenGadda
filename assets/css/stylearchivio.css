@@ -1678,7 +1678,7 @@ html, body {
     
         /* Other styles for the content */
         .maincontent {
-          margin-left: 250px; /* Adjust this to match the width of the sidebar */
+          margin-left: 250px; 
           padding: 20px;
         }
     
