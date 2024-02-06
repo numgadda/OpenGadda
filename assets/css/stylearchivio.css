@@ -1642,7 +1642,14 @@ html, body {
       width: 435px; 
     }
 
-  
+    #hero2 {
+      width: 100%;
+      height: 50vh;
+      background: url("img/Gadda.jpg") bottom center;
+      background-size: cover;
+      position: relative;
+
+    }
 
         /* CSS styles for the sidebar */
         .sidebara {
@@ -1671,7 +1678,7 @@ html, body {
     
         /* Other styles for the content */
         .maincontent {
-          margin-left: 250px; 
+          margin-left: 250px; /* Adjust this to match the width of the sidebar */
           padding: 20px;
         }
     
