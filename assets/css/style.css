@@ -384,7 +384,19 @@ h6 {
     font-family: "Nunito", sans-serif;
 }
 
+.hero-container {
+  display: flex;
+  height: 100%;
+}
 
+.hero-column {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Add this line */
+  overflow: hidden;
+  z-index: 200;
+}
 
 #collib {
   z-index: 200;
