@@ -51932,7 +51932,9 @@ const jsonData =[{
     "Category":"AL",
     "schede tematiche":"AppLetAm, AppLetIng"
 }];
-// Define the getParameterByName function to extract URL parameters
+
+
+// extract URL parameters
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
     name = name.replace(/[\[\]]/g, '\\$&');
@@ -51965,13 +51967,12 @@ if (matchingItems.length > 0 && matchingItems[0].Title) {
 // Find matching items in file2Data based on Id
 const matchingItemsFile2 = findMatchingItems(file2Data, selectedId);
 
-// Display data for the matching items from file2Data in the tabs
+// Display in the tabs
 const notaDiPossessoCard = document.getElementById('nota-di-possesso-card');
 const dedicaCard = document.getElementById('dedica-card');
 const postillaMutaCard = document.getElementById('postilla-muta-card');
 const collocazionePostillaParlataCard = document.getElementById('collocazione-postilla-parlata-card');
 
-// Clear the existing content in the cards
 notaDiPossessoCard.innerHTML = '';
 dedicaCard.innerHTML = '';
 postillaMutaCard.innerHTML = '';
@@ -51985,7 +51986,7 @@ matchingItemsFile2.forEach(matchingItemFile2 => {
     const collocazione = matchingItemFile2['Collocazione'];
     const postillaParlata = matchingItemFile2['Postilla parlata'];
 
-   // toglie le tabs se sono vuote
+   // delete tabs if they are empty
     function updateTabVisibility(tabId, cardId, dataKey) {
     const tab = document.getElementById(tabId);
     const card = document.getElementById(cardId);
@@ -51993,15 +51994,13 @@ matchingItemsFile2.forEach(matchingItemFile2 => {
     const hasData = matchingItemsFile2.some(matchingItemFile2 => matchingItemFile2[dataKey]);
 
 
-    // mostra le tab che anno contento come attie
+    // show the tabs with content as active
     if (hasData) {
         tab.style.display = 'block';
 
-        // Activate the tab using Bootstrap's JavaScript methods
         const tabInstance = new bootstrap.Tab(tab);
         tabInstance.show();
 
-        // Also, activate the corresponding nav-link
         const navLink = document.querySelector(`[href="#${tabId}"]`);
         if (navLink) {
             navLink.classList.add('active');
@@ -52046,10 +52045,7 @@ document.body.appendChild(container);
      // Check if the card is empty and set the title in red
      
 });
-    // Append the list item to a list container (if you have one)
-    // Or you can append it directly to the document body, for example
-
-    // Helper function to append content to a card
+    
     function appendToCard(card, label, value) {
     const listItem = document.createElement('p');
     if (value !== null) {

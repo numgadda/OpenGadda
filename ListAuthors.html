@@ -125,13 +125,12 @@
 
     <h1>List of Authors</h1>
     <div id="alphabetButtons">
-        <!-- Buttons for each letter of the alphabet will be added here -->
         <button class="btn" id="showAllButton">Show All</button>
     </div>
     <ul id="authorsList" style="margin-top: 50px">
-        <!-- The list of authors will be displayed here -->
     </ul>
-</main><!-- End #main -->
+</main>
+<!-- End #main -->
 
 <!-- ======= Footer ======= -->
 <footer id="footer">
@@ -173,7 +172,7 @@
   <script src="assets/js/main.js"></script>
 
   <script>
-    // Your JSON data
+    // Function to show the alphabet buttons
     const jsonData = [
 {
 "Id":0.0,
@@ -30127,18 +30126,14 @@
 "Category":"EL"
 }
 ];
-    // Get the <ul> element to display the authors
         var ul = document.getElementById("authorsList");
 
-// Get the <div> for alphabet buttons
 var alphabetButtonsDiv = document.getElementById("alphabetButtons");
 
 // Function to filter authors by the starting letter
 function filterAuthors(letter) {
-    // Clear the current list
     ul.innerHTML = '';
 
-    // Create a Map to store unique authors and their counts for the current letter
     var authorCounts = new Map();
 
     // Populate the list with filtered authors, counting occurrences
@@ -30175,7 +30170,7 @@ function filterAuthors(letter) {
     });
 }
 
-// Create buttons for each letter of the alphabet
+// Create buttons for each letter 
 for (var letter = 'a'; letter <= 'z'; letter = String.fromCharCode(letter.charCodeAt(0) + 1)) {
     var button = document.createElement("button");
     button.textContent = letter.toUpperCase();
@@ -30188,10 +30183,8 @@ for (var letter = 'a'; letter <= 'z'; letter = String.fromCharCode(letter.charCo
 // Add a "Show All" button
 var showAllButton = document.getElementById("showAllButton");
 showAllButton.addEventListener('click', function () {
-    // Show all non-null authors
     ul.innerHTML = '';
 
-    // Create a Map to store unique authors and their counts for the entire list
     var authorCounts = new Map();
 
     // Populate the list with all non-null authors, counting occurrences
@@ -30206,11 +30199,9 @@ showAllButton.addEventListener('click', function () {
         }
     });
 
-    // Display authors and counts in the list
     authorCounts.forEach(function (count, author) {
         var li = document.createElement("li");
 
-        // Create a span for the count circle
         var countCircle = document.createElement("span");
         countCircle.className = "count-circle";
         countCircle.textContent = count;

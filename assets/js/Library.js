@@ -1,4 +1,4 @@
-
+// data Library
 const jsonData =[{
   "Id":0,
   "Authors":"Abba, Giuseppe Cesare",
@@ -32946,6 +32946,7 @@ const jsonData =[{
    "Schede":"AppLetAm, AppLetIng"
 }];
 
+// data Archive
 const jsonDataArch=
 [
 {
@@ -40865,7 +40866,7 @@ const jsonDataArch=
 }
 ];
 
-  
+// data annotations
 const file2Data =[{
   "Id":3.0,
   "Nota di possesso":"\u00abCarlo Emilio Gadda \u2013 ottobre 1931-\u00bb",
@@ -59638,15 +59639,12 @@ jsonData.forEach((item) => {
       return false;
     });
 
-    // Display the matching items from jsonDataArch
+    // Create a new div element for each matching item
     matchingArchItems.forEach((archItem) => {
-      // Create a new div element for each matching item
       const matchingItemDiv = document.createElement('div');
 
-      // Set the inner HTML of the div to the matching item details
       matchingItemDiv.innerHTML = `Matching item in jsonDataArch: ${JSON.stringify(archItem)}`;
 
-      // Append the div to the container in your HTML
       matchingItemsContainer.appendChild(matchingItemDiv);
     });
   }
@@ -59657,7 +59655,6 @@ document.addEventListener('DOMContentLoaded', function () {
      page: 5,
      pagination: true,
      item: function (item, options) {
-       // Create an array of links for the matching items in file2Data
        const matchingItems = file2Data.filter((file2Item) => file2Item.Id === item.Id);
        let links = '';
    
@@ -59665,8 +59662,6 @@ document.addEventListener('DOMContentLoaded', function () {
         // Build the URL for the Postille.html page with the item Id as a parameter
         const url = `Postille.html?id=${item.Id}`;
     
-        // Create the link with an onclick event to open the URL in a new window
-// ...
 
 links = `<a href="Postille.html?id=${item.Id}&title=${encodeURIComponent(item.Title)}" onclick="window.open('${url}', '_blank'); return false;">ANNOTATIONS</a>`;
 
@@ -59700,12 +59695,9 @@ links = `<a href="Postille.html?id=${item.Id}&title=${encodeURIComponent(item.Ti
 document.addEventListener('click', function (event) {
   const target = event.target;
 
-  // Check if the clicked element has the class "schede-link"
   if (target.classList.contains('schede-link')) {
-      // Get the value of the "data-schede" attribute
       const schedeValue = target.getAttribute('data-schede');
 
-      // Split the comma-separated values into an array
       const schedeArray = schedeValue ? schedeValue.split(',').map(value => value.trim()) : [];
 
       // Filter jsondataarch to find items with any of the "Schede" values
@@ -59719,7 +59711,6 @@ document.addEventListener('click', function (event) {
       // Open the archive.html file in a new window with schedeValue as a query parameter
       window.open(`Archive.html?schedeValue=${encodeURIComponent(schedeValue)}`, '_blank');
 
-      // Display the matching items from jsondataarch on archive.html
       showMatchingItems(matchingArchItems);
   }
 });
@@ -59728,10 +59719,8 @@ function showMatchingItems(matchingItems) {
   // Get the existing "matchingItems" div from the HTML
   const matchingItemsContainer = document.getElementById('matchingItems2');
 
-  // Clear the existing content
   matchingItemsContainer.innerHTML = '';
 
-  // Append each matching item to the container
   matchingItems.forEach((archItem) => {
       const matchingItemDiv = document.createElement('div');
       matchingItemDiv.innerHTML = `Matching item in jsondataarch: ${JSON.stringify(archItem)}`;
@@ -59739,7 +59728,6 @@ function showMatchingItems(matchingItems) {
   });
 
  
-  // You can also add styling or modify the display logic as needed
 }
 
 
@@ -59755,7 +59743,7 @@ function toggleDetails(itemId) {
 
 
    
-   // Initialize pagination
+   // roba pagination
    const pagination = new ListPagination('your-pagination-container', {
     list: userList,
     innerWindow: 1,
@@ -59765,7 +59753,6 @@ function toggleDetails(itemId) {
   
  //LISTAUTHOR
 
-// Parse the query parameters from the URL
 function getQueryParams() {
     var params = {};
     var queryString = window.location.search.substring(1);
@@ -59812,7 +59799,6 @@ filterListByAuthor();
         userList.filter();
 
         $('.search', '.searchFil').val('');   
-        //console.log('Reset Successfully!');
         updateItemCount();
 
     };
@@ -59847,7 +59833,7 @@ if (searchTitleInput) {
             if (typeof titleValue === 'string') {
                 return titleValue.toLowerCase().includes(titlesearchString);
             } else {
-                return false; // Skip non-string values
+                return false; 
             }
         });
         updateItemCount();
@@ -59859,22 +59845,19 @@ if (searchTitleInput) {
 
     
 
-   // Define an array of filters
+   // Filter through funds
 const filters = ['BTB', 'BAL', 'BAC', 'BTM'];
 
-// Attach a click event handler to each filter list item
 $('.filter-button').on('click', function () {
     const $li = $(this);
     const filterValue = $li.data('filter');
   
-    // Toggle the 'selected' class
     $li.toggleClass('selected');
   
     applyFilters();
     updateItemCount();
   });
   
-// Update item count function
 function updateItemCount() {
     const filteredItemCount = userList.matchingItems.length;
     const $count = $('.count');
@@ -59884,7 +59867,7 @@ function updateItemCount() {
 
 
   
-  // Attach a click event handler to the "Show All Funds" button
+  // show all button
   $('#show-all').on('click', function () {
     // Remove the 'selected' class from all filter list items
     $('.filter-button').removeClass('selected');
@@ -59895,7 +59878,6 @@ function updateItemCount() {
   
   // show only items that contain annotations
   $('#show-annotations').on('click', function () {
-    // Toggle the 'selected' class
     $(this).toggleClass('selected');
     applyFilters();
     updateItemCount();
@@ -59904,7 +59886,6 @@ function updateItemCount() {
   
   // Reverse the previous function
   $('#revert-show-annotations').on('click', function () {
-    // Toggle the 'selected' class
     $(this).toggleClass('selected');
     applyFilters();
     updateItemCount();
@@ -59949,21 +59930,18 @@ if (categoryFilter) {
 
 
 
-
+//function to apply the filters and make them work in tandem
   function applyFilters() {
-    // Get the author parameter from the URL
     var queryParams = getQueryParams();
     var author = queryParams.author;
 
     userList.filter(function (item) {
-        // Check if the Authors parameter from the URL matches the current item's author
         if (author && item.values().Authors) {
             var itemAuthor = item.values().Authors.toLowerCase();
             if (itemAuthor !== author.toLowerCase()) {
                 return false;
             }
         } else if (author) {
-            // If author parameter is in the URL but the current item has no Authors, exclude it
             return false;
         }
 
@@ -59973,7 +59951,7 @@ if (categoryFilter) {
         const selectedCategory = $('#category-filter').val();
 
         if (selectedCategory !== 'all' && item.values().Category !== selectedCategory) {
-            return false; // Skip items not matching the selected category
+            return false; 
         }
 
         if (isSelectedAnnotations) {
@@ -59990,7 +59968,6 @@ if (categoryFilter) {
 document.addEventListener('click', function (event) {
   const target = event.target;
 
-  // Check if target is defined and it is an element (to avoid potential issues)
   if (target && target.classList && target.classList.contains('sort')) {
     const attribute = target.getAttribute('data-sort');
     userList.sort(attribute);
