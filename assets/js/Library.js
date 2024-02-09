@@ -1,3 +1,4 @@
+
 const jsonData =[{
   "Id":0,
   "Authors":"Abba, Giuseppe Cesare",
@@ -59607,12 +59608,15 @@ const file2Data =[{
 }];
 
 //ROBA SCHEDE
-// Assuming you have an element with id="matchingItems2" in your HTML
 const matchingItemsContainer = document.getElementById('matchingItems2');
-// Clear the inner HTML to hide the content
-matchingItemsContainer.innerHTML = '';
-// Add the 'hidden' class to hide the div
-matchingItemsContainer.classList.add('hidden');
+
+if (matchingItemsContainer) {
+    // Clear the inner HTML to hide the content
+    matchingItemsContainer.innerHTML = '';
+    // Add the 'hidden' class to hide the div
+    matchingItemsContainer.classList.add('hidden');
+} 
+
 
 // Iterate through each item in jsonData
 jsonData.forEach((item) => {
@@ -59648,7 +59652,6 @@ jsonData.forEach((item) => {
   }
 });
 document.addEventListener('DOMContentLoaded', function () {
-     // Rest of your List.js code
    const options = {
      valueNames: ['Authors', 'Title', 'Cities', 'Publisher', 'Years', 'Fund', 'Category', 'Schede'],
      page: 5,
@@ -59693,7 +59696,6 @@ links = `<a href="Postille.html?id=${item.Id}&title=${encodeURIComponent(item.Ti
    const userList = new List('catalog', options, jsonData);
 
 
-// ... Your existing code ...
 
 document.addEventListener('click', function (event) {
   const target = event.target;
@@ -59783,7 +59785,6 @@ function filterListByAuthor() {
     var queryParams = getQueryParams();
     var author = queryParams.author;
 
-    console.log('Author:', author); // Debugging statement
 
     // If the author parameter is present, filter the list
     if (author) {
@@ -59819,19 +59820,27 @@ filterListByAuthor();
 
 
     //filter through authors
-    document.getElementById('search-author').addEventListener('input', function () {
-        var authorsearchString = this.value.toLowerCase(); // Convert searchString to lowercase
+    
+
+    var searchAuthorInput = document.getElementById('search-author');
+if (searchAuthorInput) {//if there are no search-author skip
+    searchAuthorInput.addEventListener('input', function () {
+        var authorsearchString = this.value.toLowerCase(); 
         userList.filter(function (item) {
             var authorValue = item.values().Authors;
             return authorValue && authorValue.toLowerCase().includes(authorsearchString);
         });
         updateItemCount();
     });
+}
+
     
 
     
 // filter through title
-    document.getElementById('search-title').addEventListener('input', function () {
+var searchTitleInput = document.getElementById('search-title');
+if (searchTitleInput) {
+    searchTitleInput.addEventListener('input', function () {
         var titlesearchString = this.value.toLowerCase();
         userList.filter(function (item) {
             var titleValue = item.values().Title;
@@ -59842,10 +59851,13 @@ filterListByAuthor();
             }
         });
         updateItemCount();
-
     });
+}
 
 
+
+
+    
 
    // Define an array of filters
 const filters = ['BTB', 'BAL', 'BAC', 'BTM'];
@@ -59899,12 +59911,14 @@ function updateItemCount() {
 
   });
   
-  document.getElementById('category-filter').addEventListener('change', function () {
-    applyFilters();
-    updateItemCount();
+  var categoryFilter = document.getElementById('category-filter');
+if (categoryFilter) {
+    categoryFilter.addEventListener('change', function () {
+        applyFilters();
+        updateItemCount();
+    });
+} 
 
-  });
-  
   function applyFilters() {
     userList.filter(function (item) {
       const isSelectedAnnotations = $('#show-annotations').hasClass('selected');
@@ -59973,6 +59987,15 @@ function updateItemCount() {
     });
 }
 
+document.addEventListener('click', function (event) {
+  const target = event.target;
+
+  // Check if target is defined and it is an element (to avoid potential issues)
+  if (target && target.classList && target.classList.contains('sort')) {
+    const attribute = target.getAttribute('data-sort');
+    userList.sort(attribute);
+  }
+});
 
 
 
