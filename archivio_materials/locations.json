@@ -1,0 +1,18 @@
+ [
+    {
+        "name": "Celle",
+        "latitude": 52.62264,
+        "longitude": 10.08047
+    },
+    {
+        "name": "Milano",
+        "latitude": 45.46427,
+        "longitude": 9.18951
+    },
+    {
+        "name": "Roma",
+        "latitude": 41.89193,
+        "longitude":12.51133
+    },
+    // Add more locations as needed
+];
